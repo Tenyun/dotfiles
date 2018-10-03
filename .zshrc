@@ -64,7 +64,7 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=000
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux sudo systemd web-search zsh-autosuggestions go)
+plugins=(gitfast pip archlinux sudo systemd zsh-autosuggestions go)
 
 source $ZSH/oh-my-zsh.sh
 
