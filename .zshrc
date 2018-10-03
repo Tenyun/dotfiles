@@ -122,7 +122,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-zstyle ':completion:*' special-dirs true
-
-autoload -U compinit
-compinit
+#zstyle ':completion:*' special-dirs true
