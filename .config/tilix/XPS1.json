@@ -1,0 +1,69 @@
+{
+    "child": {
+        "child1": {
+            "child1": {
+                "directory": "\/home\/tenyun",
+                "height": 427,
+                "overrideCommand": "zsh -c '~/.config/tilix/scripts/alsi.sh'",
+                "profile": "a2588a27-a3fa-4028-9349-b59abff8354f",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "title": "${id}: ${title}",
+                "type": "Terminal",
+                "width": 782
+            },
+            "child2": {
+                "directory": "",
+                "height": 427,
+                "overrideCommand": "zsh -c '~/.config/tilix/scripts/micro.sh'",
+                "profile": "a2588a27-a3fa-4028-9349-b59abff8354f",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "title": "${id}: ${title}",
+                "type": "Terminal",
+                "width": 1137
+            },
+            "orientation": 0,
+            "position": 40,
+            "ratio": 0.407291666666666663,
+            "type": "Paned"
+        },
+        "child2": {
+            "child1": {
+                "directory": "\/home\/tenyun",
+                "height": 550,
+                "overrideCommand": "zsh -c '~/.config/tilix/scripts/newsboat.sh'",
+                "profile": "a2588a27-a3fa-4028-9349-b59abff8354f",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "width": 1009
+            },
+            "child2": {
+                "directory": "",
+                "height": 550,
+                "overrideCommand": "zsh -c '~/.config/tilix/scripts/ncmpcpp.sh'",
+                "profile": "a2588a27-a3fa-4028-9349-b59abff8354f",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "title": "${id}: ${title}",
+                "type": "Terminal",
+                "width": 910
+            },
+            "orientation": 0,
+            "position": 52,
+            "ratio": 0.525520833333333326,
+            "type": "Paned"
+        },
+        "orientation": 1,
+        "position": 43,
+        "ratio": 0.436605316973415147,
+        "type": "Paned"
+    },
+    "height": 978,
+    "name": "XPS1",
+    "synchronizedInput": false,
+    "type": "Session",
+    "version": "1.0",
+    "width": 1920
+}

@@ -1,0 +1,4 @@
+--external-downloader "hget"
+--force-ipv4
+--hls-prefer-native
+--hls-use-mpegts
