@@ -71,8 +71,8 @@ Plug 'farmergreg/vim-lastplace'
 " So I can move between buffers easier... maybe I should use tabs or ctrl-^ instead?
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'neomake/neomake'
-" Plug 'scrooloose/syntastic'
+" Plug 'neomake/neomake'
+Plug 'scrooloose/syntastic'
 " Plug 'inkarkat/vim-spellcheck'
 
 " nvim-projectile
@@ -94,12 +94,12 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-call neomake#configure#automake('nrwi', 500)
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_sh_shellcheck_args="-x"
+" call neomake#configure#automake('nrwi', 500)
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_sh_shellcheck_args="-x"
 
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
