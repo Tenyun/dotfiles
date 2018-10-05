@@ -103,7 +103,6 @@ export GOPATH=$HOME/go
 alias ll='ls -AhlF --color=auto'
 alias ld='ls -d */ --color=auto'
 alias play='mpsyt playurl'
-alias gg='google'
 
 alias mclist='machinectl list'
 alias mcstart='machinectl start'
@@ -113,6 +112,10 @@ alias mcreboot='machinectl reboot'
 alias mclogin='machinectl login'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
+alias dfs='dotfiles status'
+alias dfss='dotfiles status -s'
+alias dfp='dotfiles push'
+alias dfca='dotfiles commit -a'
 
 #alsi -t -c1=red -c2=green
 
@@ -122,4 +125,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-#zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' special-dirs true
