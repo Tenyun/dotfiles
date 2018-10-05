@@ -92,37 +92,6 @@ export LC_CTYPE="de_DE.UTF-8"
 
 export GOPATH=$HOME/go
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll='ls -AhlF --color=auto'
-alias ld='ls -d */ --color=auto'
-alias play='mpsyt playurl'
-
-alias mclist='machinectl list'
-alias mcstart='machinectl start'
-alias mcstop='machinectl stop'
-alias mcclone='machinectl clone'
-alias mcreboot='machinectl reboot'
-alias mclogin='machinectl login'
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
-alias dfs='dotfiles status'
-alias dfss='dotfiles status -s'
-alias dfp='dotfiles push'
-alias dfca='dotfiles commit -a'
-
-#alsi -t -c1=red -c2=green
-
-# [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
 zstyle ':completion:*' special-dirs true
+
+. ~/.zsh_aliases
