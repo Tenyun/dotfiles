@@ -38,7 +38,11 @@ call plug#begin('~/.vim/plugged')
 " Git
 "Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 
+" Bash stuffs
+" Plug 'vim-scripts/bash-support.vim'
+Plug 'WolfgangMehner/bash-support'
 " Golang stuffs
 Plug 'fatih/vim-go'
 Plug 'SirVer/ultisnips'
