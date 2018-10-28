@@ -9,5 +9,6 @@
 /home/tenyun/open_mpd_fifo.sh &
 /usr/bin/feh --bg-scale ~/images/wallpapers/1.jpg &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/home/tenyun/.config/wpg/wp_init.sh &
 /usr/bin/xset s off
 /usr/bin/xset s off -dpms

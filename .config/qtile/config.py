@@ -35,8 +35,8 @@ import re
 import subprocess
 
 mod = "mod4"
-term = "/usr/bin/alacritty"
-#term = "/usr/bin/urxvt"
+#term = "/usr/bin/alacritty"
+term = "/usr/bin/urxvt"
 #term = "/usr/bin/xfce4-terminal"
 home = os.path.expanduser('~')
 client = Client()
@@ -304,7 +304,6 @@ def get_time():
 def get_datetime():
     return get_date() + get_time()
 
-
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down()),
@@ -428,6 +427,10 @@ keys = [
 #    Key([mod], "i", lazy.function(find_or_run("/usr/bin/pamac-manager", ["Pamac-manager"],
 #                                              cls_grp_dict["Pamac-manager"]))),
     Key([], "F10", to_urgent()),
+
+    # wpgtk
+    Key(["mod1"], "r", lazy.spawn("/usr/bin/wpg -m")),
+    Key(["mod1"], "t", lazy.spawn("/home/tenyun/.config/wpg/scripts/twpg.sh")),
 
     # Media player controls
     Key([], "XF86AudioPlay", lazy.spawn("/usr/bin/playerctl play")),

@@ -95,3 +95,6 @@ export GOPATH=$HOME/go
 zstyle ':completion:*' special-dirs true
 
 . ~/.zsh_aliases
+
+# (cat ~/.config/wpg/sequences &)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'

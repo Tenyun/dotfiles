@@ -31,7 +31,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -115,30 +115,30 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x002b36'
-    foreground: '0x839496'
+    background: '#090908'
+    foreground: '#a2bdc0'
 
   # Normal colors
   normal:
-    black:   '0x073642'
-    red:     '0xdc322f'
-    green:   '0x859900'
-    yellow:  '0xb58900'
-    blue:    '0x268bd2'
-    magenta: '0xd33682'
-    cyan:    '0x2aa198'
-    white:   '0xeee8d5'
+    black:   '#090908'
+    red:     '#2f6475'
+    green:   '#7f9ea9'
+    yellow:  '#abadaa'
+    blue:    '#c05c45'
+    magenta: '#907f74'
+    cyan:    '#547b82'
+    white:   '#a2bdc0'
 
   # Bright colors
   bright:
-    black:   '0x42474D'
-    red:     '0xcb4b16'
-    green:   '0x586e75'
-    yellow:  '0x657b83'
-    blue:    '0x839496'
-    magenta: '0x6c71c4'
-    cyan:    '0x93a1a1'
-    white:   '0xfdf6e3'
+    black:   '#1e1e1a'
+    red:     '#3287a2'
+    green:   '#91d6ee'
+    yellow:  '#d6f7c6'
+    blue:    '#ff6c48'
+    magenta: '#cca185'
+    cyan:    '#5fa9b6'
+    white:   '#d8fdff'
 
 ## Colors (Tomorrow Night Bright)
 #colors:
@@ -249,7 +249,7 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrollback_lines: 1
+  faux_scrolling_lines: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
