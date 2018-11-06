@@ -61,24 +61,24 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: GoMono Nerd Font # should be "Menlo" or something on macOS.
+    family: GoMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: GoMono Nerd Font # should be "Menlo" or something on macOS.
+    family: GoMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: GoMono Nerd Font # should be "Menlo" or something on macOS.
+    family: GoMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 8.0
+  size: 9.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -115,30 +115,30 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '#090908'
-    foreground: '#a2bdc0'
+    background: '#0f1512'
+    foreground: '#c3c4c3'
 
   # Normal colors
   normal:
-    black:   '#090908'
-    red:     '#2f6475'
-    green:   '#7f9ea9'
-    yellow:  '#abadaa'
-    blue:    '#c05c45'
-    magenta: '#907f74'
-    cyan:    '#547b82'
-    white:   '#a2bdc0'
+    black:   '#0f1512'
+    red:     '#649283'
+    green:   '#847a90'
+    yellow:  '#7c9718'
+    blue:    '#567f71'
+    magenta: '#458b8f'
+    cyan:    '#31a180'
+    white:   '#c3c4c3'
 
   # Bright colors
   bright:
-    black:   '#1e1e1a'
-    red:     '#3287a2'
-    green:   '#91d6ee'
-    yellow:  '#d6f7c6'
-    blue:    '#ff6c48'
-    magenta: '#cca185'
-    cyan:    '#5fa9b6'
-    white:   '#d8fdff'
+    black:   '#1f2c26'
+    red:     '#72cdaf'
+    green:   '#aa8dcc'
+    yellow:  '#a7cf13'
+    blue:    '#61b297'
+    magenta: '#4bc0c7'
+    cyan:    '#31dfac'
+    white:   '#fefffe'
 
 ## Colors (Tomorrow Night Bright)
 #colors:
@@ -212,7 +212,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.93
+background_opacity: 0.80
 
 # Mouse bindings
 #

@@ -73,9 +73,10 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=de_DE.UTF-8
-export LC_COLLATE=C
+# export LANG="de_DE.UTF-8"
+# export LC_COLLATE="C"
 export LC_CTYPE="de_DE.UTF-8"
+export LC_NUMERIC="C"
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -96,5 +97,4 @@ zstyle ':completion:*' special-dirs true
 
 . ~/.zsh_aliases
 
-# (cat ~/.config/wpg/sequences &)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'

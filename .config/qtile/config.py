@@ -35,9 +35,10 @@ import re
 import subprocess
 
 mod = "mod4"
-#term = "/usr/bin/alacritty"
-term = "/usr/bin/urxvt"
-#term = "/usr/bin/xfce4-terminal"
+term = "/usr/bin/alacritty"
+# term = "/usr/bin/kitty"
+# term = "/usr/bin/urxvt"
+# term = "/usr/bin/xfce4-terminal"
 home = os.path.expanduser('~')
 client = Client()
 
@@ -46,7 +47,7 @@ cls_grp_dict = {
     "Chromium": "2", "Vivaldi-stable": "2", "Midori": "2", "Dillo": "2",
     "Netsurf-gtk3": "2", "QupZilla": "2", "Uget-gtk": "2", "Tor Browser": "2",
     "Waterfox": "2", "Xfce4-terminal": "3", "UXTerm": "3", "URxvt": "3", "Terminator": "3",
-    "Alacritty": "3", "Urxvt": "3", "mlterm": "3", "Lxterminal": "3",
+    "Alacritty": "3", "Urxvt": "3", "kitty": "3", "Lxterminal": "3",
     "XTerm": "3", "Pcmanfm": "4", "Thunar": "4", "ranger": "4", "Caja": "4",
     "Catfish": "4", "Zathura": "5", "libreoffice-writer": "5", "libreoffice": "5",
     "Leafpad": "5", "kate": "5", "Pluma": "5", "Mousepad": "5",
@@ -117,7 +118,7 @@ group_matches = [
     [Match(wm_class=[
         "Xfce4-terminal", "UXTerm", "URxvt", "Terminator",
         "Alacritty", "Urxvt",
-        "XTerm", "mlterm", "Lxterminal",
+        "XTerm", "kitty", "Lxterminal",
     ]), ],
 
     [Match(wm_class=[
