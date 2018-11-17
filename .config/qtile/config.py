@@ -101,7 +101,7 @@ group_inits = [
 
 group_layouts = [
     "tile", "max", "monadtall",
-    "monadtall", "stack", "zoomy",
+    "monadtall", "stack", "tile",
     "max", "max", "monadtall",
     "bsp",
 ]
@@ -417,10 +417,14 @@ keys = [
 #   Key([mod], "p", lazy.function(find_or_run("/usr/bin/pragha", ("Pragha", "Clementine"),
 #                                             cls_grp_dict["Pragha"], [regex("pragha"), regex("clementine")]))),
    Key([mod], "c", lazy.spawn(term+" -e /usr/bin/weechat")),
-    Key([mod], "w", lazy.function(find_or_run("/usr/bin/waterfox -P default", ("Waterfox", "Chromium", "Vivaldi-stable"),
+   Key([mod], "w", lazy.function(find_or_run("/usr/bin/qutebrowser", ("Waterfox", "Chromium", "Vivaldi-stable"),
                                               cls_grp_dict["Firefox"],
                                               ("/usr/lib/firefox/firefox", "/usr/lib/chromium/chromium",
                                                "/opt/vivaldi/vivaldi-bin")))),
+   # Key([mod], "w", lazy.function(find_or_run("/usr/bin/waterfox -P default", ("Waterfox", "Chromium", "Vivaldi-stable"),
+   #                                            cls_grp_dict["Firefox"],
+   #                                            ("/usr/lib/firefox/firefox", "/usr/lib/chromium/chromium",
+   #                                             "/opt/vivaldi/vivaldi-bin")))),
 #    Key([mod, "shift"], "w", lazy.function(find_or_run(home +
 #                                                       "/Apps/Internet/tor-browser_en-US/Browser/start-tor-browser "
 #                                                       "--detach ", ("Tor Browser",), cls_grp_dict["Tor Browser"],
