@@ -11,6 +11,10 @@ alias ll='ls -AhlF --color=auto'
 alias ld='ls -d */ --color=auto'
 alias play='mpsyt playurl'
 
+alias qutebrowser='(qutebrowser &)'
+
+alias exercism='~/projects/exercism/exercism'
+
 alias mclist='machinectl list'
 alias mcstart='machinectl start'
 alias mcstop='machinectl stop'

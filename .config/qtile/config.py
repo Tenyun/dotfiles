@@ -35,6 +35,7 @@ import re
 import subprocess
 
 mod = "mod4"
+# term = "/usr/bin/xst"
 term = "/usr/bin/alacritty"
 # term = "/usr/bin/kitty"
 # term = "/usr/bin/urxvt"
@@ -44,10 +45,10 @@ client = Client()
 
 cls_grp_dict = {
     "luakit": "2", "Firefox": "2", "Opera": "2", "Google-chrome": "2",
-    "Chromium": "2", "Vivaldi-stable": "2", "Midori": "2", "Dillo": "2",
+    "Chromium": "2", "Vivaldi-stable": "2", "qutebrowser": "2", "Dillo": "2",
     "Netsurf-gtk3": "2", "QupZilla": "2", "Uget-gtk": "2", "Tor Browser": "2",
     "Waterfox": "2", "Xfce4-terminal": "3", "UXTerm": "3", "URxvt": "3", "Terminator": "3",
-    "Alacritty": "3", "Urxvt": "3", "kitty": "3", "Lxterminal": "3",
+    "Alacritty": "3", "Urxvt": "3", "kitty": "3", "st-256color": "3",
     "XTerm": "3", "Pcmanfm": "4", "Thunar": "4", "ranger": "4", "Caja": "4",
     "Catfish": "4", "Zathura": "5", "libreoffice-writer": "5", "libreoffice": "5",
     "Leafpad": "5", "kate": "5", "Pluma": "5", "Mousepad": "5",
@@ -110,7 +111,7 @@ group_matches = [
     None,
     [Match(wm_class=[
         "luakit", "Firefox", "Opera", "Google-chrome",
-        "Chromium", "Vivaldi-stable", "Midori",
+        "Chromium", "Vivaldi-stable", "qutebrowser",
         "Dillo", "Netsurf-gtk3", "QupZilla",
         "Uget-gtk", "Tor Browser", "Waterfox",
     ], role=["browser"]), ],
@@ -118,7 +119,7 @@ group_matches = [
     [Match(wm_class=[
         "Xfce4-terminal", "UXTerm", "URxvt", "Terminator",
         "Alacritty", "Urxvt",
-        "XTerm", "kitty", "Lxterminal",
+        "XTerm", "kitty", "st-256color",
     ]), ],
 
     [Match(wm_class=[
@@ -283,7 +284,6 @@ def exit_menu():
     @lazy.function
     def __inner(qtile):
         subprocess.Popen(["/usr/bin/sh", home + "/.script/qtile-rofi_exit_menu"])
-    
     return __inner
 
 
@@ -421,16 +421,6 @@ keys = [
                                               cls_grp_dict["Firefox"],
                                               ("/usr/lib/firefox/firefox", "/usr/lib/chromium/chromium",
                                                "/opt/vivaldi/vivaldi-bin")))),
-   # Key([mod], "w", lazy.function(find_or_run("/usr/bin/waterfox -P default", ("Waterfox", "Chromium", "Vivaldi-stable"),
-   #                                            cls_grp_dict["Firefox"],
-   #                                            ("/usr/lib/firefox/firefox", "/usr/lib/chromium/chromium",
-   #                                             "/opt/vivaldi/vivaldi-bin")))),
-#    Key([mod, "shift"], "w", lazy.function(find_or_run(home +
-#                                                       "/Apps/Internet/tor-browser_en-US/Browser/start-tor-browser "
-#                                                       "--detach ", ("Tor Browser",), cls_grp_dict["Tor Browser"],
-#                                                       ("\./firefox",)))),
-#    Key([mod], "i", lazy.function(find_or_run("/usr/bin/pamac-manager", ["Pamac-manager"],
-#                                              cls_grp_dict["Pamac-manager"]))),
     Key([], "F10", to_urgent()),
 
     # wpgtk

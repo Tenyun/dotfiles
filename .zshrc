@@ -73,8 +73,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG="de_DE.UTF-8"
-export LC_COLLATE=de_DE.UTF-8
+export LANG=de_DE.UTF-8
+export LC_COLLATE=C
 export LC_CTYPE=de_DE.UTF-8
 export LC_NUMERIC=C
 
@@ -92,9 +92,12 @@ export LC_NUMERIC=C
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 zstyle ':completion:*' special-dirs true
 
 . ~/.zsh_aliases
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+fpath=(~/.zsh.d/ $fpath)

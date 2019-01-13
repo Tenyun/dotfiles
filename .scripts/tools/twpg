@@ -1,0 +1,3 @@
+#!/bin/bash -
+wpg -z "$(wpg -c)"
+wpg -s "$(wpg -c)"

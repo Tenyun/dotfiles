@@ -44,8 +44,15 @@ Plug 'idanarye/vim-merginal'
 " Plug 'vim-scripts/bash-support.vim'
 Plug 'WolfgangMehner/bash-support'
 " Golang stuffs
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go'
 Plug 'SirVer/ultisnips'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'shougo/neopairs.vim'
+
+" i3
+Plug 'mboughaba/i3config.vim'
 
 " vim-go crutch to help generate tests for Golang
 Plug 'buoto/gotests-vim'
@@ -88,8 +95,7 @@ Plug 'Shougo/denite.nvim'
 "Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-go'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
@@ -127,3 +133,26 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:airline_powerline_fonts = 1
 
 let g:deoplete#enable_at_startup = 1
+
+" Go config
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:go_auto_sameids = 1
+
+let g:go_fmt_command = "goimports"
+
+let g:go_auto_type_info = 1
+
+call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
