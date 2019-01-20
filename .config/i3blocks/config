@@ -19,7 +19,7 @@ markup=pango
 
 [pacpackages]
 label=📦
-interval=once
+interval=3600
 signal=8
 
 #[torrent]

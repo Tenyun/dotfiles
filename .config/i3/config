@@ -16,7 +16,7 @@ set $hibernate sudo -A systemctl suspend
 # Setting the background:
 exec --no-startup-id ~/.config/wpg/wp_init.sh
 # Starts dunst for notifications:
-exec_always --no-startup-id dunst
+exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton -fb
 
@@ -160,10 +160,10 @@ bindsym $mod+Shift+8    move container to workspace $ws8
 bindsym $mod+Shift+9    move container to workspace $ws9
 bindsym $mod+Shift+0    move container to workspace $ws10
 
-for_window [title="mpsyt"] move to workspace $ws10
 for_window [class="qutebrowser"] move to workspace $ws2
-for_window [class="Tc"] move to workspace $ws6 , focus
+for_window [title="sysupdate"] move to workspace $ws3 , focus
+for_window [class="Pcmanfm"] move to workspace $ws4
 for_window [class="mpv"] move to workspace $ws7 , focus
-for_window [class="pcmanfm"] move to workspace $ws4
+for_window [class="Tc"] move to workspace $ws8 , focus
 for_window [class="streamlink-twitch-gui"] move to workspace $ws8
-
+for_window [title="mpsyt"] move to workspace $ws10

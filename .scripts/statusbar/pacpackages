@@ -7,8 +7,8 @@
 # When clicked, it will run an upgrade via pacman.
 
 case $BLOCK_BUTTON in
-	1) $TERMINAL -e sysupdate ;;
-	2) notify-send "$(checkupdate+aur)" ;;
+	1) $TERMINAL --title sysupdate -e sysupdate ;;
+	2) notify-send "$(checkupdates+aur)" ;;
 	3) pgrep -x dunst >/dev/null && notify-send "<b>Upgrade module:</b>
 📦: number of upgradable packages
 - Left click to upgrade packages
