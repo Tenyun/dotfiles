@@ -7,7 +7,8 @@
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll='ls -AhlF --color=auto'
+alias ll='ls -AhlFN --color=auto --group-directories-first'
+alias ls='ls -AhNF --color=auto --group-directories-first'
 alias ld='ls -d */ --color=auto'
 alias play='mpsyt playurl'
 
@@ -28,3 +29,5 @@ alias dfa='dotfiles add'
 alias dfss='dotfiles status -s'
 alias dfp='dotfiles push'
 alias dfca='dotfiles commit -a'
+alias v='$EDITOR'
+alias e='$EDITOR'

@@ -115,30 +115,30 @@ render_timer: false
 colors:
   # Default colors
   primary:
-    background: '#201911'
-    foreground: '#c7c5c3'
+    background: '#1c1e15'
+    foreground: '#c6c6c4'
 
   # Normal colors
   normal:
-    black:   '#201911'
-    red:     '#c7924c'
-    green:   '#a48ea3'
-    yellow:  '#e89e59'
-    blue:    '#94aec7'
-    magenta: '#c0a5c4'
-    cyan:    '#5b9cbc'
-    white:   '#c7c5c3'
+    black:   '#1c1e15'
+    red:     '#a0c4cf'
+    green:   '#b4b7b0'
+    yellow:  '#8997a4'
+    blue:    '#96aab7'
+    magenta: '#a79c92'
+    cyan:    '#a594c8'
+    white:   '#c6c6c4'
 
   # Bright colors
   bright:
-    black:   '#3a2d1e'
-    red:     '#ffc050'
-    green:   '#e9a4e5'
-    yellow:  '#ffcc5e'
-    blue:    '#a9e2ff'
-    magenta: '#ffbfff'
-    cyan:    '#64d0ff'
-    white:   '#fffffc'
+    black:   '#54564f'
+    red:     '#a0c4cf'
+    green:   '#b4b7b0'
+    yellow:  '#8997a4'
+    blue:    '#96aab7'
+    magenta: '#a79c92'
+    cyan:    '#a594c8'
+    white:   '#c6c6c4'
 
 ## Colors (Tomorrow Night Bright)
 #colors:

@@ -12,7 +12,7 @@ export TERM="xterm-256color"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="risto"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon dir vcs dir_writable)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator custom_arch_icon dir vcs dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram time battery)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -64,7 +64,7 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=000
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast pip archlinux sudo systemd zsh-autosuggestions go)
+plugins=(gitfast pip archlinux sudo systemd zsh-autosuggestions go fzf)
 
 source $ZSH/oh-my-zsh.sh
 

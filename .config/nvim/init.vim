@@ -65,6 +65,8 @@ Plug 'tyru/open-browser.vim'
 " So commenting in & out code blocks works
 Plug 'tpope/vim-commentary'
 
+Plug 'tpope/vim-surround'
+
 " Could use
 " https://www.reddit.com/r/neovim/comments/8sigvd/how_do_i_open_a_js_file_under_my_cursor/e102d2a/
 " instead
