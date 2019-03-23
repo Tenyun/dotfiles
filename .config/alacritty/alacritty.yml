@@ -115,30 +115,30 @@ render_timer: false
 colors:
   # Default colors
   primary:
-    background: '#1c1e15'
-    foreground: '#c6c6c4'
+    background: '#131a1a'
+    foreground: '#c4c5c5'
 
   # Normal colors
   normal:
-    black:   '#1c1e15'
-    red:     '#a0c4cf'
-    green:   '#b4b7b0'
-    yellow:  '#8997a4'
-    blue:    '#96aab7'
-    magenta: '#a79c92'
-    cyan:    '#a594c8'
-    white:   '#c6c6c4'
+    black:   '#131a1a'
+    red:     '#9ab2e4'
+    green:   '#687ec9'
+    yellow:  '#5fa1b1'
+    blue:    '#71bcd3'
+    magenta: '#988817'
+    cyan:    '#a9b666'
+    white:   '#c4c5c5'
 
   # Bright colors
   bright:
-    black:   '#54564f'
-    red:     '#a0c4cf'
-    green:   '#b4b7b0'
-    yellow:  '#8997a4'
-    blue:    '#96aab7'
-    magenta: '#a79c92'
-    cyan:    '#a594c8'
-    white:   '#c6c6c4'
+    black:   '#273737'
+    red:     '#afdeff'
+    green:   '#7398ff'
+    yellow:  '#69dcf7'
+    blue:    '#7dffff'
+    magenta: '#d1b912'
+    cyan:    '#e8ff72'
+    white:   '#feffff'
 
 ## Colors (Tomorrow Night Bright)
 #colors:
@@ -212,7 +212,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.60
+background_opacity: 0.80
 
 # Mouse bindings
 #
@@ -313,7 +313,7 @@ live_config_reload: true
 #     send arbitrary strings of bytes.
 #   `command` must be a map containing a `program` string, and `args` array of
 #     strings. For example:
-#     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
+#     -  ... , command:  program: "alacritty", args: ["-e", "vttest"] 
 #
 # Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
 # (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,

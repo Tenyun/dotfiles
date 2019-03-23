@@ -19,6 +19,10 @@ exec --no-startup-id ~/.config/wpg/wp_init.sh
 exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton -fb
+# Set German Keyboard
+exec --no-startup-id setxkbmap -layaut de
+# Set HiDPI Scaling
+# exec xrandr --dpi 196
 
 # Set Xresources colors:
 set_from_resource $darkblack    color0  #000000
@@ -47,7 +51,7 @@ client.urgent           $darkred        $darkred        $black          $darkred
 client.background $black
 
 bar {
-        font pango:mono 10
+        font pango:GoMono Nerd Font Mono 10
         colors {
                         background $darkblack
                         statusline $darkwhite
@@ -76,7 +80,7 @@ bindsym $mod+Shift+q            [con_id="__focused__" instance="^(?!dropdown_).*
 
 bindsym $mod+w					exec --no-startup-id $BROWSER
 
-bindsym $mod+r                  exec --no-startup-id dmenu_run
+bindsym $mod+r                  exec --no-startup-id dmenu_run -fn 'GoMono-13'
 bindsym $mod+u					exec --no-startup-id dmenuunicode
 
 bindsym $mod+t                  split toggle

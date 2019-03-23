@@ -5,6 +5,7 @@ export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export READER="zathura"
 export FILE="pcmanfm"
+export GDK_SCALE=1
 
 # less/man colors
 export LESS=-R
