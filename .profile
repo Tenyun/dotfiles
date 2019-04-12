@@ -7,6 +7,10 @@ export READER="zathura"
 export FILE="pcmanfm"
 export GDK_SCALE=1
 
+# Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # less/man colors
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold

@@ -51,7 +51,7 @@ client.urgent           $darkred        $darkred        $black          $darkred
 client.background $black
 
 bar {
-        font pango:GoMono Nerd Font Mono 10
+        font pango:DejaVuSansMono Nerd Font Mono 10
         colors {
                         background $darkblack
                         statusline $darkwhite
@@ -80,13 +80,13 @@ bindsym $mod+Shift+q            [con_id="__focused__" instance="^(?!dropdown_).*
 
 bindsym $mod+w					exec --no-startup-id $BROWSER
 
-bindsym $mod+r                  exec --no-startup-id dmenu_run -fn 'GoMono-13'
+bindsym $mod+r                  exec --no-startup-id dmenu_run -fn 'DejaVuSansMono Nerd Font Mono-13'
 bindsym $mod+u					exec --no-startup-id dmenuunicode
 
 bindsym $mod+t                  split toggle
 
-bindsym $mod+s                  gaps inner current plus 4
-bindsym $mod+Shift+s            gaps inner current minus 4
+bindsym $mod+s                  gaps inner current plus 2
+bindsym $mod+Shift+s            gaps inner current minus 2
 
 bindsym $mod+f                  fullscreen toggle
 
@@ -167,6 +167,7 @@ bindsym $mod+Shift+0    move container to workspace $ws10
 for_window [class="qutebrowser"] move to workspace $ws2
 for_window [title="sysupdate"] move to workspace $ws3 , focus
 for_window [class="Pcmanfm"] move to workspace $ws4
+for_window [title="newsboat-rss"] move to workspace $ws5 focus
 for_window [class="mpv"] move to workspace $ws7 , focus
 for_window [class="Tc"] move to workspace $ws8 , focus
 for_window [class="streamlink-twitch-gui"] move to workspace $ws8

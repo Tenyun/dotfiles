@@ -91,9 +91,6 @@ export LC_NUMERIC=C
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 zstyle ':completion:*' special-dirs true
 
 . ~/.zsh_aliases
