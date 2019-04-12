@@ -1,0 +1,2 @@
+macro m set "browser" "tsp alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set "browser" "linkhandler" ; 
+macro v set "browser" "tsp mpv %u" ; open-in-browser-and-mark-read ; set "browser" "linkhandler" ; 
