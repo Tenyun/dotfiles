@@ -19,7 +19,7 @@ signal=6
 
 [pacpackages]
 label=📦
-interval=3600
+interval=once
 signal=8
 
 #[torrent]
