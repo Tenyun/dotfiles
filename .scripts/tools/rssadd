@@ -1,0 +1,9 @@
+#!/bin/sh
+! echo "$QUTE_URL" | grep "https*://\S\+\.[A-Za-z]\+\S*" >/dev/null &&
+	notify-send "That doesn't look like a full URL." && exit
+RSSFILE="$HOME/.config/newsboat/urls"
+if awk '{print $QUTE_URL}' "$RSSFILE" | grep "^$QUTE_URL$" >/dev/null; then
+	notify-send "You already have this RSS feed."
+else
+	echo "$QUTE_URL" >> "$RSSFILE" && notify-send "RSS feed added."
+fi

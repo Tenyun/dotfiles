@@ -1,0 +1,3 @@
+#!/bin/bash
+
+youtube-dl --ignore-config --add-metadata -ic -f bestvideo+bestaudio/best "$1" -o "$HOME/Videos/raw/%(title)s.%(ext)s" --restrict-filenames
