@@ -14,4 +14,4 @@ case $BLOCK_BUTTON in
 - Middle click to show upgradable packages" ;;
 esac
 
-checkupdates+aur | wc -l
+checkupdates+aur | wc -l | sed -e "s/^0$//g"

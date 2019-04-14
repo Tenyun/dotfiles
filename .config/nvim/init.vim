@@ -1,38 +1,24 @@
 let mapleader =","
-map <F8> :setlocal spell! spelllang=en_gb<CR>
-set title
-set ruler
-set showmatch
-set ignorecase
-set incsearch
-set hlsearch
-set bs=2
-set nobackup
-set number
+
+set number relativenumber
+set nohlsearch
 set nocompatible
-let html_use_css = 1
-
 set encoding=utf-8
-
-set diffopt+=iwhite " Ignore whitespace whilst diffing
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
+set clipboard=unnamedplus
+set wildmode=longest,list,full
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set backupcopy=yes
+set clipboard+=unnamedplus
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%F
 
-set noswapfile
-
-set undofile
-set undodir=/tmp
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
 filetype plugin indent on
-set nofoldenable
-
-" Using tabless https://www.npmjs.com/package/standard
-autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
 
 call plug#begin('~/.vim/plugged')
 " Git
@@ -62,7 +48,6 @@ Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-surround'
 
-
 " So Neovim can remember where it left off
 Plug 'farmergreg/vim-lastplace'
 
@@ -86,18 +71,17 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+" Automatically deletes all trailing whitespace on save.
+	autocmd BufWritePre * %s/\s\+$//e
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-map <leader>c :w! \| !compiler <c-r>%<CR>
+map <leader>c :w! \| :silent !compiler <c-r>%<CR><CR>
 
 " Open corresponding .pdf/.html or preview
 map <leader>p :!opout <c-r>%<CR><CR>
 
 nnoremap <A-m> :MerginalToggle<CR>
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " call neomake#configure#automake('nrwi', 500)
 let g:syntastic_always_populate_loc_list = 1
@@ -113,14 +97,6 @@ let g:go_auto_sameids = 1
 autocmd Filetype vue setlocal sw=2 sts=2 expandtab
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd BufEnter * silent! lcd %:p:h
-
-set wildmode=longest,list,full
-set wildmenu
-
-" https://en.parceljs.org/hmr.html#safe-write
-set backupcopy=yes
-
-set clipboard+=unnamedplus
 
 " https://github.com/ctrlpvim/ctrlp.vim
 let g:ctrlp_map = '<c-p>'

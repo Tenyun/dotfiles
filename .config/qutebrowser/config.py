@@ -1473,19 +1473,13 @@ c.url.searchengines = {
 c.url.start_pages = [
         "https://www.google.de",
         "https://greatercommons.com/learn/golang",
-        "https://www.youtube.com/user/PietSmittie/videos",
-        "https://www.youtube.com/channel/UCnZIn_CYjz0ErPs1ktH-2lQ/videos",
         "https://www.youtube.com/",
         "https://10.0.0.1/foris/config/",
         "https://10.0.0.1/cgi-bin/luci",
-        "https://forum.turris.cz/latest",
         "http://10.0.1.13/admin/",
-        "https://discourse.pi-hole.net/latest",
-        "https://discourse.gitea.io/",
         "https://gitea.omniaty.ddnss.de/explore/repos",
         "https://nc.omniaty.ddnss.de/apps/files/?dir=/&fileid=2",
         "https://www.amazon.de",
-        "http://linuxgizmos.com/",
         "https://diasp.de/stream",
         "https://mastodon.technology/web/getting-started",
         "https://www.deepl.com/translator",
@@ -1527,8 +1521,10 @@ config.bind('<Shift-Right>', 'tab-next')
 config.bind('M', 'hint links spawn --detach alacritty --title mpsyt -e mpsyt playurl {hint-url}')
 config.bind('V', 'hint links spawn --detach mpv {hint-url}')
 config.bind('v', 'spawn mpv {url}')
-config.bind('<Alt-n>', 'hint links userscript ~/.scripts/tools/rssadd')
-config.bind('<Alt-m>', 'spawn --userscript ~/.scripts/tools/ytrssadd {url}')
+config.bind('<Alt-l>', 'hint links userscript ~/.scripts/tools/rssadd')
+config.bind('<Alt-y>', 'spawn --userscript ~/.scripts/tools/ytrssadd {url}')
+config.bind('<Alt-v>', 'spawn --userscript ~/.scripts/tools/ytdl {url}')
+config.bind('<Alt-a>', 'spawn --userscript ~/.scripts/tools/ytdla {url}')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
