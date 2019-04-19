@@ -28,5 +28,5 @@ RSSFILE="$HOME/.config/newsboat/urls"
 if awk '{print $rssurl}' "$RSSFILE" | grep "^$rssurl$" >/dev/null; then
 	notify-send "You already have this RSS feed."
 else
-	echo "$rssurl" >> "$RSSFILE" && notify-send "RSS feed added."
+	echo "$rssurl" >> "$RSSFILE" && notify-send "Youtube RSS feed added."
 fi
