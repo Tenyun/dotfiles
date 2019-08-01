@@ -1,3 +1,15 @@
 #!/bin/bash -
 
-youtube-dl --ignore-config -x --audio-format flac --add-metadata -ic -f bestaudio "$1" -o "$HOME/Music/raw/%(title)s.%(ext)s" --restrict-filenames
+if [ -n "$QUTE_URL" ];
+then
+	URL="$QUTE_URL"
+else
+	URL="$1"
+fi
+
+title=$(youtube-dl -e "$URL")
+notify-send "⬇ Start Audio-Download of" "$title"
+
+youtube-dl --ignore-config -x --audio-format flac --add-metadata -ic -f bestaudio "$URL" -o "$HOME/Music/raw/%(title)s.%(ext)s" --restrict-filenames
+
+notify-send "✔ Finish Audio-Download of" "$title"

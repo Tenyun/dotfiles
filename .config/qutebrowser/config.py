@@ -1462,9 +1462,9 @@ c.url.default_page = 'https://www.google.de/'
 ## `:open google qutebrowser`.
 ## Type: Dict
 c.url.searchengines = {
-        'DEFAULT': 'https://www.google.com.ar/search?q={}',
+        'DEFAULT': 'https://www.google.de/search?q={}',
         'd': 'https://duckduckgo.com/?q={}',
-        'y': 'https://www.youtube.com/results?search_query={}',
+        'y': 'https://www.youtube.de/results?search_query={}',
         'g': 'https://github.com/search?q={}',
         }
 
@@ -1473,7 +1473,7 @@ c.url.searchengines = {
 c.url.start_pages = [
         "https://www.google.de",
         "https://greatercommons.com/learn/golang",
-        "https://www.youtube.com/",
+        "https://www.youtube.de/",
         "https://10.0.0.1/foris/config/",
         "https://10.0.0.1/cgi-bin/luci",
         "http://10.0.1.13/admin/",
@@ -1523,8 +1523,8 @@ config.bind('V', 'hint links spawn --detach mpv {hint-url}')
 config.bind('v', 'spawn mpv {url}')
 config.bind('<Alt-l>', 'hint links userscript ~/.scripts/tools/rssadd')
 config.bind('<Alt-y>', 'spawn --userscript ~/.scripts/tools/ytrssadd {url}')
-config.bind('<Alt-v>', 'spawn --userscript ~/.scripts/tools/ytdl {url}')
-config.bind('<Alt-a>', 'spawn --userscript ~/.scripts/tools/ytdla {url}')
+config.bind('<Alt-v>', 'hint links userscript ~/.scripts/tools/ytdl')
+config.bind('<Alt-a>', 'hint links userscript ~/.scripts/tools/ytdla')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')

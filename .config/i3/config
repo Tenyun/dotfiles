@@ -105,6 +105,7 @@ bindsym $mod+Shift+l            move right 30
 
 bindsym mod1+r					exec --no-startup-id wpg -m
 bindsym mod1+t					exec --no-startup-id twpg
+bindsym mod1+l					exec --no-startup-id lockscreen
 
 # #---Arrow Keys---# #
 bindsym $mod+Left               workspace prev
