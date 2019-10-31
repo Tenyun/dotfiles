@@ -97,6 +97,6 @@ zstyle ':completion:*' special-dirs true
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
-fpath=(~/.zsh.d/ $fpath)
+#fpath=(~/.zfunc/ $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

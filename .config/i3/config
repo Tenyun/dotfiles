@@ -69,20 +69,20 @@ bar {
 
 # #---Basic Bindings---# #
 bindsym $mod+Shift+Escape       exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
-bindsym $mod+Shift+r			restart
+bindsym $mod+Shift+r		restart
 
-bindsym $mod+Return				split horizontal ;; exec $term
-bindsym $mod+shift+Return		split vertical ;; exec $term
+bindsym $mod+Return		split horizontal ;; exec $term
+bindsym $mod+shift+Return	split vertical ;; exec $term
 
 bindsym $mod+q                  [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
 
-bindsym $mod+w					exec --no-startup-id $BROWSER
-bindsym $mod+n					exec --no-startup-id $term --title newsboat-rss -e newsboat -r
+bindsym $mod+w			exec --no-startup-id $BROWSER
+bindsym $mod+n			exec --no-startup-id $term --title newsboat-rss -e newsboat -r
 
 bindsym $mod+r                  exec --no-startup-id dmenu_run -fn 'DejaVuSansMono Nerd Font Mono-13'
-bindsym $mod+u					exec --no-startup-id dmenuunicode
+bindsym $mod+u			exec --no-startup-id dmenuunicode
 
 bindsym $mod+t                  split toggle
 
@@ -103,17 +103,17 @@ bindsym $mod+Shift+k            move up 30
 bindsym $mod+l                  focus right
 bindsym $mod+Shift+l            move right 30
 
-bindsym mod1+r					exec --no-startup-id wpg -m
-bindsym mod1+t					exec --no-startup-id twpg
-bindsym mod1+l					exec --no-startup-id lockscreen
+bindsym mod1+r			exec --no-startup-id wpg -m
+bindsym mod1+t			exec --no-startup-id twpg
+bindsym mod1+l			exec --no-startup-id lockscreen
 
 # #---Arrow Keys---# #
 bindsym $mod+Left               workspace prev
 bindsym $mod+Right              workspace next
-bindsym $mod+Home				focus left
-bindsym $mod+End				focus right
+bindsym $mod+Home		focus left
+bindsym $mod+End		focus right
 bindsym $mod+Next               focus down
-bindsym $mod+Prior                 focus up
+bindsym $mod+Prior              focus up
 bindsym $mod+Shift+Left         move left
 bindsym $mod+Shift+Down         move down
 bindsym $mod+Shift+Up           move up
@@ -122,6 +122,8 @@ bindsym $mod+Ctrl+Left          exec --no-startup-id i3resize left
 bindsym $mod+Ctrl+Right         exec --no-startup-id i3resize right
 bindsym $mod+Ctrl+Up            exec --no-startup-id i3resize up
 bindsym $mod+Ctrl+Down          exec --no-startup-id i3resize down
+bindsym $mod+mod1+Right		move container to output right
+bindsym $mod+mod1+Left		move container to output left
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.

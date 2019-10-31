@@ -1476,9 +1476,13 @@ c.url.start_pages = [
         "https://www.youtube.de/",
         "https://10.0.0.1/foris/config/",
         "https://10.0.0.1/cgi-bin/luci",
-        "http://10.0.1.13/admin/",
+        "http://10.0.1.14/admin/",
+        "http://10.0.1.253/admin/",
+        "https://10.0.1.10:8006",
         "https://gitea.omniaty.ddnss.de/explore/repos",
+        "https://gitea.com/Tenyun/pve-status?lang=de-DE",
         "https://nc.omniaty.ddnss.de/apps/files/?dir=/&fileid=2",
+        "https://www.netmetr.cz//en/my.html",
         "https://www.amazon.de",
         "https://diasp.de/stream",
         "https://mastodon.technology/web/getting-started",
@@ -1501,7 +1505,7 @@ c.url.start_pages = [
 
 ## Default zoom level.
 ## Type: Perc
-c.zoom.default = '90%'
+c.zoom.default = '125%'
 
 ## Available zoom levels.
 ## Type: List of Perc
