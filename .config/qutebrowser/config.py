@@ -529,7 +529,7 @@ c.content.default_encoding = 'utf-8'
 ##   - true
 ##   - false
 ##   - ask
-# c.content.geolocation = 'ask'
+c.content.geolocation = False
 
 ## Value to send in the `Accept-Language` header. Note that the value
 ## read from JavaScript is always the global value.
@@ -797,7 +797,7 @@ c.content.pdfjs = True
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
 ## Type: Int
-c.downloads.remove_finished = 60
+c.downloads.remove_finished = 600
 
 ## Editor (and arguments) to use for the `open-editor` command. The
 ## following placeholders are defined: * `{file}`: Filename of the file
@@ -814,39 +814,39 @@ c.editor.command = ['nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = 'bold 12pt GoMono Nerd Font Mono'
+c.fonts.completion.category = 'bold 12pt DejaVuSansMono Nerd Font'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '12pt GoMono Nerd Font Mono'
+c.fonts.completion.entry = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = '12pt GoMono Nerd Font Mono'
+c.fonts.debug_console = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = '12pt GoMono Nerd Font Mono'
+c.fonts.downloads = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = 'bold 12pt GoMono Nerd Font Mono'
+c.fonts.hints = 'bold 12pt DejaVuSansMono Nerd Font'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '12pt GoMono Nerd Font Mono'
+c.fonts.keyhint = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = '12pt GoMono Nerd Font Mono'
+c.fonts.messages.error = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = '12pt GoMono Nerd Font Mono'
+c.fonts.messages.info = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = '12pt GoMono Nerd Font Mono'
+c.fonts.messages.warning = '12pt DejaVuSansMono Nerd Font'
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
@@ -855,15 +855,15 @@ c.fonts.messages.warning = '12pt GoMono Nerd Font Mono'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '12pt GoMono Nerd Font Mono'
+c.fonts.prompts = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '12pt GoMono Nerd Font Mono'
+c.fonts.statusbar = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '12pt GoMono Nerd Font Mono'
+c.fonts.tabs = '12pt DejaVuSansMono Nerd Font'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily

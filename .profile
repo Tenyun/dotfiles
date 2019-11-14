@@ -3,6 +3,7 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
+export browser="qutebrowser"
 export READER="zathura"
 export FILE="pcmanfm"
 export GDK_SCALE=1
