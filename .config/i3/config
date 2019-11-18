@@ -18,7 +18,7 @@ exec --no-startup-id ~/.config/wpg/wp_init.sh
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
-exec --no-startup-id compton -fb
+exec --no-startup-id picom -fb
 # Set German Keyboard
 exec --no-startup-id setxkbmap -layaut de
 # Set HiDPI Scaling
