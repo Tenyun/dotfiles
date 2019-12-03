@@ -1466,6 +1466,8 @@ c.url.searchengines = {
         'd': 'https://duckduckgo.com/?q={}',
         'y': 'https://www.youtube.de/results?search_query={}',
         'g': 'https://github.com/search?q={}',
+        'a': 'https://www.archlinux.org/packages/?q={}',
+        'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         }
 
 ## Page(s) to open at the start.

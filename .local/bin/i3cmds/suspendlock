@@ -1,0 +1,10 @@
+#!/bin/sh
+
+pauseallmpv >/dev/null 2>&1
+
+/usr/bin/alacritty -e /usr/bin/cmatrix &
+sleep 0.2
+
+/usr/bin/i3-msg fullscreen
+
+/usr/bin/i3lock -c 000000 -n; /usr/bin/i3-msg kill
