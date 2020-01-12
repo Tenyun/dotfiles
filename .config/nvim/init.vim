@@ -35,6 +35,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 "Deoplete
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Cheat Cheet
+Plug 'lifepillar/vim-cheat40'
 call plug#end()
 
 "COPY/PASTE:
@@ -120,6 +122,9 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>c  :only<CR>
 let g:go_fmt_command = "goimports"
+" let g:go_metalinter_command='revive'
+" let g:go_metalinter_autosave = 1
+" autocmd BufWritePre *.go :GoLint
 
 "SYNTAX HIGHLIGHTING:
 "--------------------

@@ -560,6 +560,8 @@ c.content.geolocation = False
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
+c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+
 
 ## Enable host blocking.
 ## Type: Bool
@@ -579,7 +581,7 @@ c.content.host_blocking.enabled = True
 ## A list of patterns that should always be loaded, despite being ad-
 ## blocked. Local domains are always exempt from hostblocking.
 ## Type: List of UrlPattern
-c.content.host_blocking.whitelist = ['greatercommons.com,mastodon.technology']
+# c.content.host_blocking.whitelist = ['greatercommons.com,mastodon.technology']
 
 ## Enable hyperlink auditing (`<a ping>`).
 ## Type: Bool
@@ -1462,10 +1464,13 @@ c.url.default_page = 'https://www.google.de/'
 ## `:open google qutebrowser`.
 ## Type: Dict
 c.url.searchengines = {
-        'DEFAULT': 'https://www.google.de/search?q={}',
-        'd': 'https://duckduckgo.com/?q={}',
+        'DEFAULT': 'https://duckduckgo.com/?q={}&kae=t&kl=de-de&kad=de_DE&kp=-2&kav=1&t=h_&ia=web',
+        # 'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}&t=dark&prfe=67d6f7efcd45238dc5da976ba89cf2c159fcc4f8848a538a69f41f78436014c15065027ac0acf3048b0efafd7d93a95c',
+        'si': 'https://searx.de/?preferences=eJxtVUHP2zYM_TXzxUixtoedfBg6DC1Q4Cv2ZbsKtMTIrCXRleTk8359qcR27DSHOLFEvvf0RDIR0-hyUhxUwIvK0DbHOGJlmFTExO6MsUmaDt3YvsuXykGwI1hsDFaONbjrL0MJWodGDW60FFLzH_mDox5Vx7nHKf324dPLgKFACp1yFPqVs418SRgLd4n7Ek4UKKNKOrJzS-afWmNK6q-XLwJyiRJQkRchaoj8NjV_g0tYwZhZsx8cZtE16r58LFcJTpgQou6a36vcoceGk4ZYYdjrfkV3UqKAo4dMHIqgYwTdi75___kq1J7FEVn9fDx-e12kyPvrFb6cSUNGy3FSCR3qfDcHg3BganrSPchZ1IkcFoZTRKwTn_IFItaGoqQVAEVZds8MWanEmsDVHg2BLFIApc5kkAuAZbYO68HBVMMwbKC11od83oaSFTWQBNJiwAjF4ZaCreUuJLE8iyQTmcwdJ0wghFfHy-t6hKcS_JhIK3X9kq0JgsG3LR9om3i8R1jEPpPHNB_5xrbsFnXPsp9z85lwK-z920a3GY3U0hOsNeLHBUKub27_4jpKqRZX7vkniMyra47aCHGqy36itCOS6qAz1vvVMPj5yBN0BWiDHKVJCPRGWwcCXx5zzkx-z8E8eQ7SXbijHvraU4y85GXuJ86cOu4h3H2-ub4ad4rgoZwItxL3ZeInLx0hJ84RQnJS-Tt3PH-Xm92usPRyxIE3JXpzfAfruE0Z38V9PSwJD_JXwQ_rS3jC_wP4rQhp_RDrlOOo8xhLtciEw6BLHxuy9pd7v1BPQ_n9rHRWWRfKWebEY_L7jx__eNvITBliHsro2oAZY2uD18lXxs52a-216z2tI2uZJhGNoV03LysPOq4-7zjXAVnfSmxTai3lVrYwzzcwhiTtlbpNyEIz39ltvmo2WJfHnGcpO2jnlzvhM7k34Mpj7tg0315ej9U8SqWhm7t9D4MwV9dRfkh5kj8jx5YK_flgIPY_AYWHlTs=&q={}',
+        's': 'https://searx.de/?preferences=eJxtVcGu4zYM_Jr6YmTR7R568qFoUewCC7xFX9qrQEuMzVoSvZScPPfrSyWOY7_NIU4skTOjEckIpsnnZDiaiBeToW2OMmHlmIxgYn9GaZKlQz-1H_Kl8hC7CTpsHFaeLfjrL0cJWo_OjH7qKKbmHwoHTwOanvOAc_rpl99fRowFUumMpzisnK3wJaEU7hL3JZ4oUkaTrLD398zfrMWUzB8vXxTkIhpQUVAhZhR-m5s_wSesYMpsOYwes-qa7FA-HVcJTpgQxPbNz1XuMWDDyYJUGPe6X9GfjCpgCZCJYxF0FLCD6vv7r69KHVgd0dXPx-O317sUfX-9wpczWcjYscwmoUebH-ZgVA5MzUB2AD2LOZHHwnASxDrxKV9AsHYkmlYADGXdPTNkYxJbAl8HdAS6SBGMOZNDLgAdc-exHj3MNYzjBtpae8jnbSh1qgaSQnYYUaA43FLsar0LTSzPIskJk3vgxBmU8Op4eV2P8FRCmBJZY65fujVDdPi25QPbJZ4eER3ikClgWo58Y7vvFnXPsp9z85lwK-zj20a3m5zW0hOsNeL7BWKub27_4DpqqRZXHvknEObVNU-tgMx12U-UdkRaHXTGer8ax7AceYa-AG2QRZuEwG609aDw5bHkLOSPHMxz4KjdhTvqcagDifA9L_Mwc-bU8wDx4fPN9dW4k0CAciLcStyXSZiDdoSeOAvE5LXyd-4E_ldvdrvC2suCI29K9Ob4DtZzmzJ-kH093BPeyV8Fv1u_hyf8L0LYitDWj1KnLJPNk5Rq0QmH0ZY-dtR1P9z7hQYay-9npbPKulDOOifeJ3_89OnXt43MlEHyWEbXBsy5rnZ4nXxl7Gy31l673tM6su7TRNA52nXzfeWdjqvPO851QNa3EtuUWku51S3Myw1MMWl7pX4TcqdZ7uw2Xy07rMtjyesoe2iXlwfhM7k34Cpg7tk1315ej9UySrWhm9W-lX9BqK6T_JDyrP9Fnjsq7OeDAxn-B_QTlQw=&q={}',
+        'g': 'https://www.google.de/search?q={}',
         'y': 'https://www.youtube.de/results?search_query={}',
-        'g': 'https://github.com/search?q={}',
+        'gh': 'https://github.com/search?q={}',
         'a': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         }
@@ -1507,7 +1512,7 @@ c.url.start_pages = [
 
 ## Default zoom level.
 ## Type: Perc
-c.zoom.default = '125%'
+c.zoom.default = '100%'
 
 ## Available zoom levels.
 ## Type: List of Perc

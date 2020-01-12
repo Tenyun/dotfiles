@@ -122,22 +122,22 @@ colors:
   normal:
     black:   '#0f1512'
     red:     '#567f71'
-    green:   '#7c9718'
+    green:   '#31a180'
     yellow:  '#649283'
     blue:    '#458b8f'
-    magenta: '#847a90'
-    cyan:    '#31a180'
+    magenta: '#7c9718'
+    cyan:    '#847a90'
     white:   '#c3c4c3'
 
   # Bright colors
   bright:
     black:   '#23322b'
     red:     '#61b297'
-    green:   '#a7cf13'
+    green:   '#31dfac'
     yellow:  '#72cdaf'
     blue:    '#4bc0c7'
-    magenta: '#aa8dcc'
-    cyan:    '#31dfac'
+    magenta: '#a7cf13'
+    cyan:    '#aa8dcc'
     white:   '#fefffe'
 
 ## Colors (Tomorrow Night Bright)

@@ -7,18 +7,30 @@
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# list things
 alias ll='ls -AhlFN --color=auto --group-directories-first'
+alias cll='clear && ls -AhlFN --color=auto --group-directories-first'
 alias ls='ls -AhNF --color=auto --group-directories-first'
 alias ld='ls -d */ --color=auto'
-alias play='mpsyt playurl'
+
+# pacman/yay
 alias yi='yay -S'
 alias ys='yay -Ss'
 alias yr='yay -Rs'
 
-alias qutebrowser='(qutebrowser &)'
 
+# Music
+alias play='mpsyt playurl'
+alias ts='tagutil'
+alias te='tagutil edit'
+alias bi='beet import'
+alias bl='beet ls'
+
+# Programming
 alias exercism='~/projects/exercism/exercism'
 
+# machinectl
 alias mclist='machinectl list'
 alias mcstart='machinectl start'
 alias mcstop='machinectl stop'
@@ -26,7 +38,8 @@ alias mcclone='machinectl clone'
 alias mcreboot='machinectl reboot'
 alias mclogin='machinectl login'
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/Projects/.dotfiles/ --work-tree=$HOME/'
+# dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
 alias dfs='dotfiles status'
 alias dfa='dotfiles add'
 alias dfr='dotfiles rm -r --cached'

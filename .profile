@@ -6,7 +6,8 @@ export BROWSER="qutebrowser"
 export browser="qutebrowser"
 export READER="zathura"
 export FILE="pcmanfm"
-export GDK_SCALE=1
+export GTK_SCALE=1
+export VDPAU_DRIVER="va_gl"
 
 # Golang
 export GOPATH=$HOME/go
