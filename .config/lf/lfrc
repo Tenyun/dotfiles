@@ -1,0 +1,109 @@
+# Basic Settings
+set preview false
+set previewer preview
+#set previewer pistol
+set hidden true
+set color256 true
+set drawbox true
+set icons true
+set ignorecase true
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        video/*|image/*|application/pdf) xdg-open "$f" & disown;;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+    printf "Directory Name: "
+    read ans
+    mkdir $ans
+}}
+
+cmd mkfile ${{
+    printf "File Name: "
+    read ans
+    $EDITOR $ans
+}}
+
+cmd sudomkfile ${{
+    printf "File Name: "
+    read ans
+    sudo $EDITOR $ans
+}}
+
+cmd setwallpaper ${{
+    cp "$f" ~/.config/wall.png && feh --bg-scale --no-fehbg "$f"
+}}
+
+cmd openterm ${{
+    $TERMINAL &
+}}
+
+cmd fzf_jump ${{
+   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+   if [ -f "$res" ]; then
+     cmd="select"
+   elif [ -d "$res" ]; then
+     cmd="cd"
+   fi
+lf -remote "send $id $cmd \"$res\""
+}}
+
+# Bindings
+# Remove some defaults
+map m
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+
+# File Openers
+map ee $$EDITOR "$f"
+map es $sudo $EDITOR "$f"
+
+# Basic Functions
+map f :fzf_jump
+map dd delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map mf mkfile
+map mr sudomkfile
+map md mkdir
+map ms $mkscript
+#map bg setwallpaper
+map ot openterm
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+# Movement
+map gh cd ~/
+map gD cd ~/downloads
+map gd. cd ~/documents
+map gds cd ~/documents/slides
+map gdd cd ~/documents/documentations
+map gv. cd ~/videos
+map gi. cd ~/images
+map gl. cd ~/.local
+map gp. cd ~/projects
+map gr. cd ~/repos
+map gc cd ~/.config
+
+# Open Configs
+map cz $$EDITOR ~/.zshrc
+map cza $$EDITOR ~/.zsh_aliases
+map czp $$EDITOR ~/.zprofile
+map cl $$EDITOR ~/.config/lf/lfrc
+map cn $$EDITOR ~/.config/nvim/init.vim
