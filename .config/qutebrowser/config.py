@@ -1486,7 +1486,7 @@ c.url.start_pages = [
         "http://10.0.1.14/admin/",
         "http://10.0.1.253/admin/",
         "https://10.0.1.10:8006",
-        "https://gitea.omniaty.ddnss.de/explore/repos",
+        "https://gitea.omniaty.ddnss.de/explore/repos?lang=de-DE",
         "https://gitea.com/Tenyun/pve-status?lang=de-DE",
         "https://nc.omniaty.ddnss.de/apps/files/?dir=/&fileid=2",
         "https://www.netmetr.cz//en/my.html",
@@ -1529,13 +1529,13 @@ c.zoom.default = '100%'
 ## Bindings for normal mode
 config.bind('<Shift-Left>', 'tab-prev')
 config.bind('<Shift-Right>', 'tab-next')
-config.bind('M', 'hint links spawn --detach alacritty --title mpsyt -e mpsyt playurl {hint-url}')
+config.bind('M', 'hint links spawn --detach alacritty --class mpsyt -e mpsyt playurl {hint-url}')
 config.bind('V', 'hint links spawn --detach mpv {hint-url}')
 config.bind('v', 'spawn mpv {url}')
-config.bind('<Alt-l>', 'hint links userscript ~/.scripts/tools/rssadd')
-config.bind('<Alt-y>', 'spawn --userscript ~/.scripts/tools/ytrssadd {url}')
-config.bind('<Alt-v>', 'hint links userscript ~/.scripts/tools/ytdl')
-config.bind('<Alt-a>', 'hint links userscript ~/.scripts/tools/ytdla')
+config.bind('<Alt-l>', 'hint links userscript ~/.local/bin/rssadd')
+config.bind('<Alt-y>', 'spawn --userscript ~/.local/bin/ytrssadd {url}')
+config.bind('<Alt-v>', 'hint links userscript ~/.local/bin/ytdl')
+config.bind('<Alt-a>', 'hint links userscript ~/.local/bin/ytdla')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')

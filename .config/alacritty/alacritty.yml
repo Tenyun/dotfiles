@@ -115,29 +115,29 @@ debug.render_timer: false
 colors:
   # Default colors
   primary:
-    background: '#0f1512'
-    foreground: '#c3c4c3'
+    background: '0x000000'
+    foreground: '0xdddddd'
 
   # Normal colors
   normal:
     black:   '#0f1512'
-    red:     '#567f71'
-    green:   '#31a180'
-    yellow:  '#649283'
-    blue:    '#458b8f'
-    magenta: '#7c9718'
-    cyan:    '#847a90'
+    red:     '#7c9718'
+    green:   '#847a90'
+    yellow:  '#31a180'
+    blue:    '#649283'
+    magenta: '#567f71'
+    cyan:    '#458b8f'
     white:   '#c3c4c3'
 
   # Bright colors
   bright:
     black:   '#23322b'
-    red:     '#61b297'
-    green:   '#31dfac'
-    yellow:  '#72cdaf'
-    blue:    '#4bc0c7'
-    magenta: '#a7cf13'
-    cyan:    '#aa8dcc'
+    red:     '#a7cf13'
+    green:   '#aa8dcc'
+    yellow:  '#31dfac'
+    blue:    '#72cdaf'
+    magenta: '#61b297'
+    cyan:    '#4bc0c7'
     white:   '#fefffe'
 
 ## Colors (Tomorrow Night Bright)
@@ -212,7 +212,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.80
+background_opacity: 0.50
 
 # Mouse bindings
 #
@@ -323,7 +323,7 @@ key_bindings:
   - { key: C,        mods: Control|Shift,    action: Copy                }
   - { key: Paste,                   action: Paste                        }
   - { key: Copy,                    action: Copy                         }
-  - { key: Q,        mods: Command, action: Quit                         }
+#  - { key: Q,        mods: Command, action: Quit                         }
   - { key: W,        mods: Command, action: Quit                         }
   - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Control, action: ResetFontSize                }

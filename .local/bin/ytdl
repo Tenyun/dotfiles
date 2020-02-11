@@ -10,6 +10,6 @@ fi
 title=$(youtube-dl -e "$URL")
 notify-send "⬇ Start Video-Download of" "$title"
 
-youtube-dl --ignore-config --add-metadata -ic -f bestvideo+bestaudio/best "$URL" -o "$HOME/Videos/raw/%(title)s.%(ext)s" --restrict-filenames
+youtube-dl --ignore-config --add-metadata -ic -f bestvideo+bestaudio/best "$URL" -o "$HOME/videos/raw/%(title)s.%(ext)s" --restrict-filenames
 
 notify-send "✔ Finish Video-Download of" "$title"

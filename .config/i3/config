@@ -77,7 +77,7 @@ bindsym $mod+shift+Return	split vertical ;; exec $term
 bindsym $mod+q                  [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
-
+bindsym $mod+d			exec --no-startup-id $term --class lf -e lf
 bindsym $mod+w			exec --no-startup-id $BROWSER
 bindsym $mod+n			exec --no-startup-id $term --title newsboat-rss -e newsboat -r
 
@@ -127,9 +127,14 @@ bindsym $mod+mod1+Left		move container to output left
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
-bindsym XF86AudioMute           exec --no-startup-id lmc mute
-bindsym XF86AudioLowerVolume    exec --no-startup-id lmc down 5
-bindsym XF86AudioRaiseVolume    exec --no-startup-id lmc up 5
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioPlay 		exec --no-startup-id mpc toggle
+bindsym mod1+XF86AudioNext	exec --no-startup-id mpc next
+bindsym mod1+XF86AudioPrev 	exec --no-startup-id mpc prev
+bindsym XF86AudioNext 		exec --no-startup-id mpc seek +10
+bindsym XF86AudioPrev 		exec --no-startup-id mpc seek -10
 bindsym XF86MonBrightnessDown   exec --no-startup-id xbacklight -dec 15
 bindsym XF86MonBrightnessUp     exec --no-startup-id xbacklight -inc 15
 
@@ -170,10 +175,10 @@ bindsym $mod+Shift+0    move container to workspace $ws10
 
 for_window [class="qutebrowser"] move to workspace $ws2
 for_window [title="sysupdate"] move to workspace $ws3 , focus
-for_window [class="Pcmanfm"] move to workspace $ws4
+for_window [instance="lf"] move to workspace $ws4 focus
 for_window [title="newsboat-rss"] move to workspace $ws5 focus
 for_window [class="mpv"] move to workspace $ws7 , focus
 for_window [class="Tc"] move to workspace $ws8 , focus
 for_window [class="streamlink-twitch-gui"] move to workspace $ws8
-for_window [title="mpsyt"] move to workspace $ws10
+for_window [instance="mpsyt"] move to workspace $ws10
 for_window [title="mpv-music"] move to workspace $ws10
