@@ -121,23 +121,23 @@ colors:
   # Normal colors
   normal:
     black:   '#0f1512'
-    red:     '#7c9718'
-    green:   '#847a90'
-    yellow:  '#31a180'
-    blue:    '#649283'
-    magenta: '#567f71'
-    cyan:    '#458b8f'
+    red:     '#567f71'
+    green:   '#7c9718'
+    yellow:  '#649283'
+    blue:    '#458b8f'
+    magenta: '#847a90'
+    cyan:    '#31a180'
     white:   '#c3c4c3'
 
   # Bright colors
   bright:
     black:   '#23322b'
-    red:     '#a7cf13'
-    green:   '#aa8dcc'
-    yellow:  '#31dfac'
-    blue:    '#72cdaf'
-    magenta: '#61b297'
-    cyan:    '#4bc0c7'
+    red:     '#61b297'
+    green:   '#a7cf13'
+    yellow:  '#72cdaf'
+    blue:    '#4bc0c7'
+    magenta: '#aa8dcc'
+    cyan:    '#31dfac'
     white:   '#fefffe'
 
 ## Colors (Tomorrow Night Bright)

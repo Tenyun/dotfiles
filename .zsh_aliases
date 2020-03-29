@@ -13,6 +13,7 @@ alias ll='ls -AhlFN --color=auto --group-directories-first'
 alias cll='clear && ls -AhlFN --color=auto --group-directories-first'
 alias ls='ls -AhNF --color=auto --group-directories-first'
 alias ld='ls -d */ --color=auto'
+alias lt='tree -al'
 
 # pacman/yay
 alias yi='yay -S'

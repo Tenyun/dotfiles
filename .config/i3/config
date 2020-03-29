@@ -144,10 +144,10 @@ set $ws3 "3:🐚"
 set $ws4 "4:📁"
 set $ws5 "5:📃"
 set $ws6 "6:📷"
-set $ws7 "7:📺"
+set $ws7 "7:🎶"
 set $ws8 "8:🎮"
-set $ws9 "9:🌸"
-set $ws10 "10:🎶"
+set $ws9 "9:📺"
+set $ws10 "10:🌸"
 
 # switch to workspace
 bindsym $mod+1          workspace $ws1
@@ -177,8 +177,8 @@ for_window [class="qutebrowser"] move to workspace $ws2
 for_window [title="sysupdate"] move to workspace $ws3 , focus
 for_window [instance="lf"] move to workspace $ws4 focus
 for_window [title="newsboat-rss"] move to workspace $ws5 focus
-for_window [class="mpv"] move to workspace $ws7 , focus
+for_window [class="mpv"] move to workspace $ws9 , focus
 for_window [class="Tc"] move to workspace $ws8 , focus
 for_window [class="streamlink-twitch-gui"] move to workspace $ws8
-for_window [instance="mpsyt"] move to workspace $ws10
-for_window [title="mpv-music"] move to workspace $ws10
+for_window [instance="mpsyt"] move to workspace $ws7
+for_window [title="mpv-music"] move to workspace $ws7

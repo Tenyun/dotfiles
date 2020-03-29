@@ -560,8 +560,8 @@ c.content.geolocation = False
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
-
+# c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+# c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome Safari/537.36'
 
 ## Enable host blocking.
 ## Type: Bool
@@ -1481,13 +1481,14 @@ c.url.start_pages = [
         "https://www.google.de",
         "https://greatercommons.com/learn/golang",
         "https://www.youtube.de/",
-        "https://10.0.0.1/foris/config/",
-        "https://10.0.0.1/cgi-bin/luci",
+        "https://10.0.0.1:10443/",
+        "https://10.0.0.2/foris/config/",
+        "https://10.0.0.2/cgi-bin/luci",
         "http://10.0.1.14/admin/",
         "http://10.0.1.253/admin/",
-        "https://10.0.1.10:8006",
+        "https://10.0.0.5",
+        "https://10.0.0.4:8006",
         "https://gitea.omniaty.ddnss.de/explore/repos?lang=de-DE",
-        "https://gitea.com/Tenyun/pve-status?lang=de-DE",
         "https://nc.omniaty.ddnss.de/apps/files/?dir=/&fileid=2",
         "https://www.netmetr.cz//en/my.html",
         "https://www.amazon.de",

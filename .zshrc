@@ -126,3 +126,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 #fpath=(~/.zfunc/ $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /home/tenyun/.config/broot/launcher/bash/br
