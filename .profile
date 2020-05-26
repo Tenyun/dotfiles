@@ -8,6 +8,7 @@ export READER="zathura"
 export FILE="pcmanfm"
 export GTK_SCALE=1
 export VDPAU_DRIVER="va_gl"
+export STATUSBAR="dwmblocks"
 
 # Golang
 export GOPATH=$HOME/go
