@@ -21,6 +21,8 @@ exec --no-startup-id dunst
 exec --no-startup-id picom -fb
 # Set German Keyboard
 exec --no-startup-id setxkbmap -layaut de
+# Speed xrate up
+exec --no-startup-id xset r rate 360 40 
 # Set HiDPI Scaling
 # exec xrandr --dpi 196
 
@@ -83,6 +85,7 @@ bindsym $mod+n			exec --no-startup-id $term --title newsboat-rss -e newsboat -r
 
 bindsym $mod+r                  exec --no-startup-id dmenu_run -fn 'DejaVuSansMono Nerd Font Mono-13'
 bindsym $mod+u			exec --no-startup-id dmenuunicode
+bindsym $mod+m			exec --no-startup-id dmenu_searchmanpage
 
 bindsym $mod+t                  split toggle
 

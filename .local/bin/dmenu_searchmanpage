@@ -1,0 +1,54 @@
+#!/bin/bash -
+#===============================================================================
+#
+#          FILE: dmenu_searchmanpage
+#
+#         USAGE: ./dmenu_searchmanpage
+#
+#   DESCRIPTION: Search manpages or give a random manpage
+#
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Tenyun (Sysadmin), tenyun@disroot.org
+#  ORGANIZATION: -
+#       CREATED: 09.05.2020 21:15:43
+#      REVISION:  ---
+#===============================================================================
+
+# set -o nounset                                  # Treat unset variables as an error
+
+
+declare options=("search
+random
+quit")
+
+MAN=""
+
+choice=$(echo -e "${options[@]}" | dmenu -i -p 'Manpages: ')
+
+openman() {
+	if [[ -z "$1" ]]; then
+		exit 1
+	else 
+		alacritty -e man "$1"
+	fi
+	
+}
+
+case "$choice" in
+	quit)
+		exit 1
+		;;
+	search)
+		MAN=$(man -k . | awk '{print $1}' | dmenu -i -l 20 -p 'Search: ')
+		openman "$MAN"
+		;;
+	random)
+
+		MAN=$(find /usr/share/man/man1 -type f | shuf | awk -F '/' '{print $6;exit;}' | sed s/.gz//g | dmenu -i -p 'Random: ')
+		openman "$MAN"
+		;;
+esac
+

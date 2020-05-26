@@ -33,9 +33,6 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: full
 
-# Display tabs using this many cells (changes require restart)
-tabspaces: 4
-
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
@@ -83,8 +80,8 @@ font:
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0
-    y: 0
+    x: -1
+    y: -1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
@@ -120,25 +117,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#0f1512'
-    red:     '#567f71'
-    green:   '#7c9718'
-    yellow:  '#649283'
-    blue:    '#458b8f'
-    magenta: '#847a90'
-    cyan:    '#31a180'
-    white:   '#c3c4c3'
+    black:   '#202018'
+    red:     '#c4c5bd'
+    green:   '#afae42'
+    yellow:  '#b2aba9'
+    blue:    '#f29d3d'
+    magenta: '#c6be8a'
+    cyan:    '#d7b26d'
+    white:   '#c7c7c5'
 
   # Bright colors
   bright:
-    black:   '#23322b'
-    red:     '#61b297'
-    green:   '#a7cf13'
-    yellow:  '#72cdaf'
-    blue:    '#4bc0c7'
-    magenta: '#aa8dcc'
-    cyan:    '#31dfac'
-    white:   '#fefffe'
+    black:   '#3c3c2d'
+    red:     '#ffffdc'
+    green:   '#f3f146'
+    yellow:  '#fdd1c5'
+    blue:    '#ffcd3b'
+    magenta: '#ffff9d'
+    cyan:    '#ffed78'
+    white:   '#fffffd'
 
 ## Colors (Tomorrow Night Bright)
 #colors:
@@ -212,7 +209,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.50
+background_opacity: 0.86
 
 # Mouse bindings
 #
