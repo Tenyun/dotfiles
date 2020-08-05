@@ -1,13 +1,13 @@
 # RSS-Feeds
-https://www.pro-linux.de/NB3/rss/2/4/atom_aktuell.xml
-https://intux.de/rss2
-https://linuxnews.de/feed/
-https://lwn.net/headlines/rss
-http://linuxgizmos.com/feed/
-https://discourse.gitea.io/latest.rss
-https://discourse.pi-hole.net/latest.rss
-https://forum.turris.cz/latest.rss
-https://www.mtb-news.de/news/feed MTB
+https://www.pro-linux.de/NB3/rss/2/4/atom_aktuell.xml "RSS" "Linux"
+https://intux.de/rss2 "RSS" "Linux"
+https://linuxnews.de/feed/ "RSS" "Linux"
+http://linuxgizmos.com/feed/ "RSS" "Linux" "Home-Server"
+https://discourse.gitea.io/latest.rss "RSS" "Gitea"
+https://discourse.pi-hole.net/latest.rss "RSS" "Pi-Hole"
+https://forum.turris.cz/latest.rss "RSS" "Omnia"
+https://www.mtb-news.de/news/feed "RSS" "MTB"
+http://feeds.feedburner.com/servethehome "RSS" "Home-Server"
 
 # Podcasts
 https://destinationlinux.org/feed/mp3/ "Podcasts" "Linux"
@@ -16,6 +16,38 @@ http://radiotux.de/podcast/rss/sendungen_mp3.xml "Podcasts" "Linux"
 https://changelog.com/gotime/feed "Podcasts" "Golang"
 https://tuxdigital.com/feed/thisweekinlinux-mp3 "Podcasts" "Linux"
 http://feeds.twit.tv/floss.xml "Podcasts" "Linux"
+
+#Github
+https://github.com/LukeSmithxyz/voidrice/commits.atom "~LS-Voidrice" "GH" "LukeSmith" "dotfiles"
+https://github.com/LukeSmithxyz/dwmblocks/commits.atom "~LS-DWMBlocks" "GH" "LukeSmith"
+https://github.com/LukeSmithxyz/dwm/commits.atom "~LS-DWM" "GH" "LukeSmith"
+https://github.com/astaxie/build-web-application-with-golang/commits.atom "~Golang-Web-Dev" "GH" "Golang"
+https://github.com/shuLhan/awwan/commits.atom "~awwan" "GH" "Golang" "CM"
+https://github.com/ventoy/Ventoy/commits.atom "~Ventoy" "GH" "Linux"
+https://github.com/krilor/gossh/commits.atom "gossh" "GH" "Golang" "CM"
+https://github.com/golang-standards/project-layout/commits.atom "Golang-project-layout" "GH" "Golang" "Programming"
+https://github.com/fyne-io/fyne/commits.atom "fyne" "GH" "Golang" "Programming"
+https://github.com/hoanhan101/ultimate-go/commits.atom "ultimate-go" "GH" "Golang" "Programming"
+https://github.com/sqshq/sampler/commits.atom "sampler" "GH" "Golang" "Programming"
+https://github.com/lukepafford/ansible2/commits.atom "ansible2" "GH" "Ansible" "CM"
+https://github.com/BrodieRobertson/dotfiles/commits.atom "~BrodieRobertson-Dotfiles" "GH" "BrodieRobertson-Dotfiles" "dotfiles"
+https://github.com/Wandmalfarbe/pandoc-latex-template/commits.atom "~pandoc-latex-template" "GH" "Latex" "pandoc"
+https://github.com/p2rkw/xf86-input-mtrack/commits.atom "~xf86-input-mtrack" "GH" "Linux"
+https://github.com/rafi/vim-config/commits.atom "~vim-config" "GH" "neovim-config"
+https://github.com/wagoodman/bashful/commits.atom "~bashful" "GH" "CM"
+https://github.com/Pungyeon/clean-go-article/commits.atom "~clean-go-article" "GH" "Golang" "Programming"
+https://github.com/looterz/grimd/commits.atom "~grimd" "GH" "adblock"
+https://github.com/MariaLetta/free-gophers-pack/commits.atom "~free-gophers-pack" "GH" "Golang"
+https://github.com/Alikhll/golang-developer-roadmap/commits.atom "~golang-developer-roadmap" "GH" "Golang" "Programming"
+https://github.com/caddyserver/caddy/commits.atom "~caddy" "GH" "Docker" "Proxy"
+https://github.com/jagon12345/using_gopsutil/commits.atom "~using_gopsutil" "GH" "Golang" "Programming"
+https://github.com/dylanaraps/pure-sh-bible/commits.atom "~pure-sh-bible" "GH" "Linux" "Shell-Programming"
+https://github.com/dylanaraps/pure-bash-bible/commits.atom "~pure-bash-bible" "GH" "Linux" "Shell-Programming"
+https://github.com/alexreinert/debmatic/commits.atom "~debmatic" "Home-Automation"
+https://github.com/Naheel-Azawy/naheel-dotfiles/commits.atom "~naheel-dotfiles" "dotfiles"
+https://github.com/n1trux/awesome-sysadmin/commits.atom "~awesome-sysadmin" "Linux" "Home-Lab"
+https://github.com/awesome-selfhosted/awesome-selfhosted/commits.atom "~awesome-selfhosted" "Linux" "Home-Lab"
+
 
 # YouTube-Feeds-Query
 "query:YOUTUBE:tags # \"YT\""
@@ -67,4 +99,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "YT
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHkYOD-3fZbuGhwsADBd9ZQ "YT" "Linux"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCwX9TNdOx84UccxG4MKUGQg "YT" "GIFS"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUSzc8BHGJPaYt0DjvscIzw "YT" "Music"
-
+https://www.youtube.com/feeds/videos.xml?channel_id=UCu4TumUmUdU_YmbSuvEOvNg "YT" "Music"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCv6J_jJa8GJqFwQNgNrMuww "YT" "Tech" "Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKXx22vOENUyHrVAADq7Z_g 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg "YT" "Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCw3UZn1tcVe7pH3R6C3Gcng "YT" "Tech"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCto7D1L-MiRoOziCXK9uT5Q "YT" "Gaming"

@@ -35,8 +35,9 @@ SPACESHIP_KUBECTL_SHOW="false"
 SPACESHIP_KUBECTL_VERSION_SHOW="false"
 SPACESHIP_KUBECONTEXT_SHOW="false"
 SPACESHIP_TERRAFORM_SHOW="false"
-
+SPACESHIP_DIR_TRUNC="3"
 SPACESHIP_PROMPT_ADD_NEWLINE="false"
+
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator custom_arch_icon dir vcs dir_writable)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram time battery)
@@ -90,7 +91,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-flow-avh pip sudo systemd zsh-autosuggestions go fzf)
+plugins=(git-flow-avh pip sudo systemd zsh-autosuggestions golang fzf)
 
 source $ZSH/oh-my-zsh.sh
 

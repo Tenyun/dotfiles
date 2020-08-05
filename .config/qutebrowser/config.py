@@ -865,7 +865,7 @@ c.fonts.statusbar = '12pt DejaVuSansMono Nerd Font'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '12pt DejaVuSansMono Nerd Font'
+# c.fonts.tabs = '12pt DejaVuSansMono Nerd Font'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1466,12 +1466,13 @@ c.url.default_page = 'https://www.google.de/'
 c.url.searchengines = {
         'DEFAULT': 'https://duckduckgo.com/?q={}&kae=t&kl=de-de&kad=de_DE&kp=-2&kav=1&t=h_&ia=web',
         # 'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}&t=dark&prfe=67d6f7efcd45238dc5da976ba89cf2c159fcc4f8848a538a69f41f78436014c15065027ac0acf3048b0efafd7d93a95c',
-        's': 'https://search.snopyta.org/?preferences=eJxlVMFu2zAM_Zr5YmRY18NOPgwbhhUY0GLNdhUYibY5S6JByUm8rx-dxInSHeJYEvn4-PxECxk7FsLUdBhRwL_7-IUCdJgqD7Gb9K1xWHm24E9vMGW2HEaPGZvqFGpG4ePcbGXCKmDu2TUvz6_bKkGLCUFs33yoco8BG04WpBJMk8_JcDQRDybDrvkGPmHlmIwest-jNAy6fM_SVaesTcqzUvDckWWH-40DGSpHCXYencHYUdQ2Mg8zZ049DxCN2ZNDTtpUwr8RgjG3NneUd5MdMBtDWdcdc-exHj3MdeC9alKkB_6DOJTpA9kBksa05HEJ4RGj4MjF1h3klMgac_rToziGS90ZosNjCQ22SzwV1VtBrBO3-QCCtSNBm1nmC8AavkK_kWDdhnGoA4mwXPIEnaOl-9P3Ljb0oyzLHnYCy-MSH2eAW2-tEyZXrIXiQGALPGvtJu-LPjwposz10mqiVPaMeQ4cvX7DcpciFOlXyW_CgDBfCZ_NtrijXh4X2nsG7SmxJfB1QEdQaHblmjJIHhc3F-XPHV9j1qS15SufVeJWIMDS5Fo7zAGDfqk6C8Tk9ba5Er9TT2UKi9MKhVe0s3v-53PtHoUPdAfoJoex3LgIVHhLFaI91vfql0aFcSwsPEN_D7Ca5I2gD8dCqI46vZWQcpn48Pj46Viwd3r5ll_H9TmxAJhiUi6pL7beuPrEr8J4f_s7yh52b_x9oXCbFaOfNDw1T7GlSBlNssJ-4fisd9icx5NRLw7XGbVTqRPKMqsWMr8pbDwNaHrOA843Iiv0VkBHi5hfP38ono4TlBX-s7Wopvn6_KQnB9H6evJ6su5SzZ5H8mwSer3mpzPfGuXKEiATx4XA9-325XXNr1Qb1KL_ANY2L34=&q={}',
-        'si': 'https://search.snopyta.org/?preferences=eJxlVMGO0zAQ_RpyiYpYOHDKAYEQSEi7YgtXa2pPkyG2Jxo77YavZ9w2rbscmib2zJs3z89jIWPPQpi6HiMK-DfvP1NuPMR-hh47h41nC_70BnNmy2HymLFrKGiAmYRflm4rMzYB88Cue3p83jYJ9pgQxA7duyYPGLDjZEEawTT7nAxHE_FoMuy6r-ATNo7J6Cb7A0qXLG2Gefc2H5tT2iblRTl47smyw8PGgYyNowQ7j85g7ClqD5nHhTOngUeIxhzIISftKOHfCMGYW487yrvZjpiNoazfPXPvsZ08LG3ggwpSpQf-gzjW6SPZEZLG7MljCeEJo-DE1dId5JzIGnP60604hUvdBaLDlxoabJ94rqrvBbFNvM9HEGwdCdrMslwA1vAV-pUE6zJMYxtIhOWSJ-gcle7LKaZqQU-lfA6wEyiPS3xcAG697Z0wuepbKI4EtsKz1m7yoerDkyLK0pZWE6W6Z8xL4Oj1DOtVilClXyW_CQPCfCV8dltxR1seF9oHBu0psSXwbUBHUGl25ZoySJ6Knavy546vMWvS2vKVzyrxXiBAaXKtHZaAQU-qzQIxeb1qrsbv1VOZQnFapfCKdnbP_3yu3aPwke4A3eww1gsXgSpvqUJ0wPZe_dqoME2VhRcY7gFWk7wS9OGlEqqnXm8lpFwnPnz48PGlYu_08pVfz-05sQKYY1IuaaiWXrn6xK_BeH_7e8oedq_8faFwmxWTnzU8dd_jniJlNMkK-8LxUe-wOc8no14cr0Nqp1InlDKsCpnfFDaeRjQD5xGXG5EVeiugo0XMr58_FE_HCcoK_8laVNN8efyuO0fR-rrzfLJuqWbP83gxCb1e89Oe3xvlyhIgE8dC4Nt2-_S85jeqDWrRfyU9Lic=&q={}',
+        's': 'https://search.snopyta.org/?preferences=eJxlVMFu2zAM_Zr5YmRY18NOPgwbhhUY0GLNdhUYibY5S6JByUm8rx-dxInSHeJYEvn4-PxECxk7FsLUdBhRwL_7-IUCdJgqD7Gb9K1xWHm24E9vMGW2HEaPGZvqFGpG4ePcbGXCKmDu2TUvz6_bKkGLCUFs33yoco8BG04WpBJMk8_JcDQRDybDrvkGPmHlmIwest-jNAy6fM_SVaesTcqzUvDckWWH-40DGSpHCXYencHYUdQ2Mg8zZ049DxCN2ZNDTtpUwr8RgjG3NneUd5MdMBtDWdcdc-exHj3MdeC9alKkB_6DOJTpA9kBksa05HEJ4RGj4MjF1h3klMgac_rToziGS90ZosNjCQ22SzwV1VtBrBO3-QCCtSNBm1nmC8AavkK_kWDdhnGoA4mwXPIEnaOl-9P3Ljb0oyzLHnYCy-MSH2eAW2-tEyZXrIXiQGALPGvtJu-LPjwposz10mqiVPaMeQ4cvX7DcpciFOlXyW_CgDBfCZ_NtrijXh4X2nsG7SmxJfB1QEdQaHblmjJIHhc3F-XPHV9j1qS15SufVeJWIMDS5Fo7zAGDfqk6C8Tk9ba5Er9TT2UKi9MKhVe0s3v-53PtHoUPdAfoJoex3LgIVHhLFaI91vfql0aFcSwsPEN_D7Ca5I2gD8dCqI46vZWQcpn48Pj46Viwd3r5ll_H9TmxAJhiUi6pL7beuPrEr8J4f_s7yh52b_x9oXCbFaOfNDw1T7GlSBlNssJ-4fisd9icx5NRLw7XGbVTqRPKMqsWMr8pbDwNaHrOA843Iiv0VkBHi5hfP38ono4TlBX-s7Wopvn6_KQnB9H6evJ6su5SzZ5H8mwSer3mpzPfGuXKEiATx4XA9-325XXNr1Qb1KL_ANY2L34=&q="{}"',
+        'si': 'https://search.snopyta.org/?preferences=eJxlVMGO0zAQ_RpyiYpYOHDKAYEQSEi7YgtXa2pPkyG2Jxo77YavZ9w2rbscmib2zJs3z89jIWPPQpi6HiMK-DfvP1NuPMR-hh47h41nC_70BnNmy2HymLFrKGiAmYRflm4rMzYB88Cue3p83jYJ9pgQxA7duyYPGLDjZEEawTT7nAxHE_FoMuy6r-ATNo7J6Cb7A0qXLG2Gefc2H5tT2iblRTl47smyw8PGgYyNowQ7j85g7ClqD5nHhTOngUeIxhzIISftKOHfCMGYW487yrvZjpiNoazfPXPvsZ08LG3ggwpSpQf-gzjW6SPZEZLG7MljCeEJo-DE1dId5JzIGnP60604hUvdBaLDlxoabJ94rqrvBbFNvM9HEGwdCdrMslwA1vAV-pUE6zJMYxtIhOWSJ-gcle7LKaZqQU-lfA6wEyiPS3xcAG697Z0wuepbKI4EtsKz1m7yoerDkyLK0pZWE6W6Z8xL4Oj1DOtVilClXyW_CQPCfCV8dltxR1seF9oHBu0psSXwbUBHUGl25ZoySJ6Knavy546vMWvS2vKVzyrxXiBAaXKtHZaAQU-qzQIxeb1qrsbv1VOZQnFapfCKdnbP_3yu3aPwke4A3eww1gsXgSpvqUJ0wPZe_dqoME2VhRcY7gFWk7wS9OGlEqqnXm8lpFwnPnz48PGlYu_08pVfz-05sQKYY1IuaaiWXrn6xK_BeH_7e8oedq_8faFwmxWTnzU8dd_jniJlNMkK-8LxUe-wOc8no14cr0Nqp1InlDKsCpnfFDaeRjQD5xGXG5EVeiugo0XMr58_FE_HCcoK_8laVNN8efyuO0fR-rrzfLJuqWbP83gxCb1e89Oe3xvlyhIgE8dC4Nt2-_S85jeqDWrRfyU9Lic=&q="{}"',
         'g': 'https://www.google.de/search?q={}',
         'y': 'https://www.youtube.de/results?search_query={}',
         'gh': 'https://github.com/search?q={}',
-        'a': 'https://www.archlinux.org/packages/?q={}',
+        'a': 'https://www.amazon.de/s?k={}&i=computers&s=review-rank&__mk_de_DE=ÅMÅŽÕÑ&qid=1594549435',
+        'arch': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         }
 
@@ -1479,22 +1480,7 @@ c.url.searchengines = {
 ## Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = [
         "https://www.google.de",
-        "https://greatercommons.com/learn/golang",
         "https://www.youtube.de/",
-        "https://10.0.0.1:10443/",
-        "https://10.0.0.2/foris/config/",
-        "https://10.0.0.2/cgi-bin/luci",
-        "http://10.0.1.14/admin/",
-        "http://10.0.1.253/admin/",
-        "https://10.0.0.5",
-        "https://10.0.0.4:8006",
-        "https://gitea.omniaty.ddnss.de/explore/repos?lang=de-DE",
-        "https://nc.omniaty.ddnss.de/apps/files/?dir=/&fileid=2",
-        "https://www.netmetr.cz//en/my.html",
-        "https://www.amazon.de",
-        "https://diasp.de/stream",
-        "https://mastodon.technology/web/getting-started",
-        "https://www.deepl.com/translator",
         ]
 
 ## URL parameters to strip with `:yank url`.

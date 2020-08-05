@@ -50,4 +50,6 @@ Plug 'fatih/molokai'
 Plug 'liuchengxu/vim-which-key'
 " Terminal
 Plug 'voldikss/vim-floaterm'
+" Vim-Wiki
+Plug 'vimwiki/vimwiki'
 call plug#end()

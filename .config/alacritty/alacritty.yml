@@ -117,25 +117,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#202018'
-    red:     '#c4c5bd'
-    green:   '#afae42'
-    yellow:  '#b2aba9'
-    blue:    '#f29d3d'
-    magenta: '#c6be8a'
-    cyan:    '#d7b26d'
-    white:   '#c7c7c5'
+    black:   '#1c2319'
+    red:     '#c14d38'
+    green:   '#be9e61'
+    yellow:  '#a0ce52'
+    blue:    '#4c7e89'
+    magenta: '#814d61'
+    cyan:    '#79a69d'
+    white:   '#bcbebb'
 
   # Bright colors
   bright:
-    black:   '#3c3c2d'
-    red:     '#ffffdc'
-    green:   '#f3f146'
-    yellow:  '#fdd1c5'
-    blue:    '#ffcd3b'
-    magenta: '#ffff9d'
-    cyan:    '#ffed78'
-    white:   '#fffffd'
+    black:   '#33402d'
+    red:     '#ff5838'
+    green:   '#ffd36b'
+    yellow:  '#d4ff57'
+    blue:    '#54acbf'
+    magenta: '#b5567b'
+    cyan:    '#8aead7'
+    white:   '#f7faf6'
 
 ## Colors (Tomorrow Night Bright)
 #colors:
@@ -172,15 +172,15 @@ colors:
 #    white:   '0xffffff'
 #
   # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+  # dim:
+  #   black:   '0x333333'
+  #   red:     '0xf2777a'
+  #   green:   '0x99cc99'
+  #   yellow:  '0xffcc66'
+  #   blue:    '0x6699cc'
+  #   magenta: '0xcc99cc'
+  #   cyan:    '0x66cccc'
+  #   white:   '0xdddddd'
 
 # Visual Bell
 #
@@ -204,7 +204,7 @@ colors:
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -251,7 +251,7 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-dynamic_title: true
+window.dynamic_title: true
 
 # hide_cursor_when_typing: false
 

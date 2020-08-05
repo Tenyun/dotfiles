@@ -19,7 +19,7 @@
 
 set -o nounset                                  # Treat unset variables as an error
 
-ytid=$(curl -s "$QUTE_URL" | tr " " "\n" | awk -F'"' '/data-channel-external-id=/{print $(NF-1);exit;}')
+ytid=$(curl -s "$QUTE_URL" | tr "," "\n" | awk -F'"' '/externalId/{print $(NF-1);exit;}')
 rssurl="https://www.youtube.com/feeds/videos.xml?channel_id=$ytid"
 
 ! echo "$rssurl" | grep "https*://\S\+\.[A-Za-z]\+\S*" >/dev/null &&

@@ -179,5 +179,26 @@ let g:which_key_map.t = {
       \ 'y' : [':FloatermNew htop'                              , 'ytop'],
       \ }
 
-" Register which key map
+" w is for wiki
+let g:which_key_map.w = {
+      \ 'name' : '+wiki' ,
+      \ 'w' : ['<Plug>VimwikiIndex' 			, 'Index'],
+      \ 'n' : ['<plug>(wiki-open)' 			, 'open'],
+      \ 'j' : ['<plug>(wiki-journal)' 			, 'journal'],
+      \ 'R' : ['<plug>(wiki-reload)' 			, 'reload'],
+      \ 'c' : ['<plug>(wiki-code-run)' 			, 'code-run'],
+      \ 'b' : ['<plug>(wiki-graph-find-backlinks)' 	, 'graph-find-backlinks'],
+      \ 'g' : ['<plug>(wiki-graph-in)' 			, 'graph-in'],
+      \ 'G' : ['<plug>(wiki-graph-out)' 		, 'graph-out'],
+      \ 'l' : ['<plug>(wiki-link-toggle)' 		, 'link-toggle'],
+      \ 'd' : ['<plug>(wiki-page-delete)' 		, 'page-delete'],
+      \ 'r' : ['<plug>(wiki-page-rename)' 		, 'page-rename'],
+      \ 't' : ['<plug>(wiki-page-toc)' 			, 'page-toc'],
+      \ 'T' : ['<plug>(wiki-page-toc-local)' 		, 'page-toc-local'],
+      \ 'e' : ['<plug>(wiki-export)' 			, 'export'],
+      \ 'u' : ['<plug>(wiki-list-uniq)' 		, 'list-uniq'],
+      \ 'U' : ['<plug>(wiki-list-uniq-local)' 		, 'uniq-local'],
+      \ }
+
+"Register which key map
 call which_key#register('<Space>', "g:which_key_map")

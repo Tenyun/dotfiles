@@ -9,6 +9,7 @@ export FILE="pcmanfm"
 export GTK_SCALE=1
 export VDPAU_DRIVER="va_gl"
 export STATUSBAR="dwmblocks"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 
 # Golang
 export GOPATH=$HOME/go
