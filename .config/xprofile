@@ -18,5 +18,10 @@ mpd &			# music player daemon-you might prefer it as a service though
 picom -fb &		# xcompmgr for transparency
 dunst &			# dunst for notifications
 xset r rate 360 40 &	# Speed xrate up
+xset s off &
+xset s noblank &
+xset -dpms &
+xset dpms 0 0 0 &
 setxkbmap -layout de & 	# Set German keyboard layout
+eval &(ssh-agent) &
 #unclutter &		# Remove mouse when idle

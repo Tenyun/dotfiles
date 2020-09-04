@@ -34,9 +34,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Switch Buffers
-nnoremap <leader>n :bn<cr>
-nnoremap <leader>p :bp<cr>
-nnoremap <leader>. :ls<cr>
+" nnoremap <leader>n :bn<cr>
+" nnoremap <leader>p :bp<cr>
+" nnoremap <leader>. :ls<cr>
 " List all possible buffers with "gb" and accept a new buffer argument [1]
 " nnoremap <leader>g :ls<CR>:b
 
@@ -50,3 +50,6 @@ nmap <F8> :TagbarToggle<CR>
 " HIGHLIGHTING
 " <Ctrl-c> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-c> :nohl<CR><C-l>
+
+" bbye close buffer
+:nnoremap <Leader>q :Bdelete<CR>

@@ -33,7 +33,7 @@ let g:which_key_map['d'] = [ ':bd'                        , 'delete buffer']
 let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['q'] = [ 'q'                          , 'quit' ]
+let g:which_key_map['n'] = [ ':NERDTreeToggle<CR>'        , 'Toggle NERDTree']
 let g:which_key_map['S'] = [ ':SSave'                     , 'save session' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
@@ -56,15 +56,15 @@ let g:which_key_map.a = {
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1']        ,
-      \ '2' : ['b2'        , 'buffer 2']        ,
-      \ 'd' : ['bd'        , 'delete-buffer']   ,
-      \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'h' : ['Startify'  , 'home-buffer']     ,
-      \ 'l' : ['blast'     , 'last-buffer']     ,
-      \ 'n' : ['bnext'     , 'next-buffer']     ,
-      \ 'p' : ['bprevious' , 'previous-buffer'] ,
-      \ '?' : ['Buffers'   , 'fzf-buffer']      ,
+      \ '1' : ['b1'        	, 'buffer 1']        ,
+      \ '2' : ['b2'        	, 'buffer 2']        ,
+      \ 'd' : ['bd'        	, 'delete-buffer']   ,
+      \ 'f' : ['bfirst'    	, 'first-buffer']    ,
+      \ 'h' : ['Startify'  	, 'home-buffer']     ,
+      \ 'l' : ['blast'     	, 'last-buffer']     ,
+      \ 'n' : ['bnext'     	, 'next-buffer']     ,
+      \ 'p' : ['bprevious' 	, 'previous-buffer'] ,
+      \ '?' : ['Buffers'   	, 'fzf-buffer']      ,
       \ }
 
 " s is for search

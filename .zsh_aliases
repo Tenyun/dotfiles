@@ -15,6 +15,18 @@ alias wl='watch ls -AhlFN --color=auto --group-directories-first'
 alias ls='ls -AhNF --color=auto --group-directories-first'
 alias ld='ls -d */ --color=auto'
 alias lt='tree -al'
+alias l.='ls -a | egrep "^\."'
+
+# color grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
 
 # pacman/yay
 alias yi='yay -S'
@@ -43,7 +55,7 @@ alias mclogin='machinectl login'
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
 alias dfs='dotfiles status'
-alias dfls='dotfiles ls-tree --full-tree -r HEAD'
+alias dfls='dotfiles ls-tree --full-tree -r --name-only HEAD'
 alias dfa='dotfiles add'
 alias dfr='dotfiles rm -r --cached'
 alias dfss='dotfiles status -s'

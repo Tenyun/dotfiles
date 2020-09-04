@@ -52,4 +52,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'voldikss/vim-floaterm'
 " Vim-Wiki
 Plug 'vimwiki/vimwiki'
+" bbye
+Plug 'moll/vim-bbye'
 call plug#end()
