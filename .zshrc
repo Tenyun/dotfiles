@@ -129,3 +129,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /home/tenyun/.config/broot/launcher/bash/br
+
+setopt complete_aliases
