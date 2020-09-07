@@ -57,9 +57,11 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HO
 alias dfs='dotfiles status'
 alias dfls='dotfiles ls-tree --full-tree -r --name-only HEAD'
 alias dfa='dotfiles add'
+alias dfap='dotfiles add -p'
 alias dfr='dotfiles rm -r --cached'
 alias dfss='dotfiles status -s'
 alias dfp='dotfiles push'
+alias dfc='dotfiles commit'
 alias dfca='dotfiles commit -a'
 
 # system things
