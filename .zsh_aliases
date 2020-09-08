@@ -33,7 +33,6 @@ alias yi='yay -S'
 alias ys='yay -Ss'
 alias yr='yay -Rs'
 
-
 # Music
 alias play='mpsyt playurl'
 alias ts='tagutil'
