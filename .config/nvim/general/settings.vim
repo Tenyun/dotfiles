@@ -37,7 +37,7 @@ set shortmess+=c 		" don't give |ins-completion-menu| messages.
 set signcolumn=no 		" always show signcolumns
 set viminfo='100,<1000,s10,h 	" Increases the memory limit from 50 lines to 1000 lines
 set iskeyword+=- 		" treat dash separated words as a word text object
-set formatoptions-=cro          " Stop newline continution of comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o          " Stop newline continution of comments
 
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
