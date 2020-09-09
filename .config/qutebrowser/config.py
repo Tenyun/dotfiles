@@ -960,7 +960,7 @@ c.content.pdfjs = True
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-# c.downloads.location.directory = None
+c.downloads.location.directory = "~/downloads/"
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
@@ -995,7 +995,7 @@ c.content.pdfjs = True
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
 ## Type: Int
-c.downloads.remove_finished = 600
+c.downloads.remove_finished = 6000
 
 ## Editor (and arguments) to use for the `open-editor` command. The
 ## following placeholders are defined:  * `{file}`: Filename of the file
