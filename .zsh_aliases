@@ -33,6 +33,9 @@ alias yi='yay -S'
 alias ys='yay -Ss'
 alias yr='yay -Rs'
 
+# cal
+alias mycal='cal -myw'
+
 # Music
 alias play='mpsyt playurl'
 alias ts='tagutil'
