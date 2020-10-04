@@ -68,7 +68,7 @@ alias dfc='df commit'
 alias dfca='df commit -a'
 
 # lazygit for dotfiles
-alias lazydot='lazygit --git-dir=$HOME/projects/.dotfiles --work-tree=$HOME'
+alias dflg='lazygit --git-dir=$HOME/projects/.dotfiles --work-tree=$HOME'
 
 # system things
 alias r='/usr/share/nvim/runtime/macros/less.sh'
