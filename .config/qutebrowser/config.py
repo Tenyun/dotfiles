@@ -478,7 +478,7 @@ c.auto_save.session = True
 ## `colors.webpage.darkmode.threshold.background` to 205.  - "With
 ## selective inversion of everything": Combines the two variants   above.
 ## Type: Bool
-# c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 
 ## Render all colors as grayscale. This only has an effect when
 ## `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
@@ -632,7 +632,7 @@ c.content.autoplay = False
 ## to _n_ pages. For more information about the feature, please refer to:
 ## http://webkit.org/blog/427/webkit-page-cache-i-the-basics/
 ## Type: Int
-# c.content.cache.maximum_pages = 0
+# c.content.cache.maximum_pages = 8
 
 ## Size (in bytes) of the HTTP network cache. Null to use the default
 ## value. With QtWebEngine, the maximum supported value is 2147483647 (~2
@@ -1783,7 +1783,7 @@ c.url.searchengines = {
         'g': 'https://www.google.de/search?q={}',
         'y': 'https://www.youtube.de/results?search_query={}',
         'gh': 'https://github.com/search?q={}',
-        'a': 'https://www.amazon.de/s?k={}&i=computers&s=review-rank&__mk_de_DE=ÅMÅŽÕÑ&qid=1594549435',
+        'a': 'https://www.amazon.de/s?k={}',
         'arch': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         }
