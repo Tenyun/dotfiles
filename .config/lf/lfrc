@@ -3,7 +3,6 @@ set preview false
 set previewer preview
 #set previewer pistol
 set hidden true
-set color256 true
 set drawbox true
 set icons true
 set ignorecase true
