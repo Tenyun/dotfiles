@@ -7,14 +7,15 @@ feed-sort-order unreadarticlecount-asc
 show-keymap-hint yes
 swap-title-and-hints no
 text-width 72
-#save-path "~/Documents/archived-articles/rss"
+save-path "~/documents/archived-articles/rss/"
 #browser /usr/bin/xdg-open %u
-browser qutebrowser
+browser "qutebrowser %u"
 #confirm-exit yes
 display-article-progress yes
 
-macro m set "browser" "tsp alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set "browser" "linkhandler" ; 
-macro v set "browser" "tsp mpv %u" ; open-in-browser-and-mark-read ; set "browser" "linkhandler" ; 
+macro m set "browser" "tsp alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
+macro v set "browser" "tsp mpv %u" ; open-in-browser ; delete-article ; set browser "qutebrowser %u" ;
 download-path "~/music/collection/podcasts/%n"
 max-downloads 4
 
+bind-key S save-all
