@@ -10,6 +10,6 @@ fi
 title=$(youtube-dl -e "$URL")
 notify-send "⬇ Start Audio-Download of" "$title"
 
-youtube-dl --ignore-config -x --audio-format flac --add-metadata -ic -f bestaudio "$URL" -o "$HOME/music/untagged/%(title)s.%(ext)s" --restrict-filenames
+youtube-dl --ignore-config -x --audio-format flac --add-metadata -ic -f bestaudio -o '$HOME/music/untagged/%(title)s.%(ext)s' --restrict-filenames "$URL"
 
 notify-send "✔ Finish Audio-Download of" "$title"
