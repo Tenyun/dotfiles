@@ -8,3 +8,10 @@ lg = !"git lg1"
 	name = Tenyun
 [core]
 	excludesFile = /home/tenyun/.gitignore
+
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
