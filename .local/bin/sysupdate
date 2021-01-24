@@ -4,5 +4,7 @@ yay -Syu --topdown --cleanafter --removemake
 sudo paccache -r
 pkill -RTMIN+8 i3blocks
 
-printf "\\nUpgrade complete.\\nPress <Enter> to exit window.\\n\\n"
+printf "\\nUpgrade complete."
+[ "$(file /boot/vmlinuz-linux | cut -d " " -f 9)" != "$(uname -r)" ] && printf '\n\e[1;91m%-6s\e[m' "New Kernel Update - A reboot is required!!!"
+printf "\\nPress <Enter> to exit window.\\n\\n"
 read -r
