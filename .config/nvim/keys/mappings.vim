@@ -1,7 +1,7 @@
 """"""""""""""""""""""
 "      Mappings      "
 """"""""""""""""""""""      
-" Set leader shortcut to a comma ','. By default it's the backslash
+" Set leader shortcut to a whitespace ' '. By default it's the backslash
 let mapleader = " "
 
 " Jump to next error with Ctrl-n and previous error with Ctrl-m. Close the
@@ -28,17 +28,18 @@ endif
 autocmd! bufwritepost init.vim source %
 
 " Movement
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
-" Switch Buffers
-" nnoremap <leader>n :bn<cr>
-" nnoremap <leader>p :bp<cr>
-" nnoremap <leader>. :ls<cr>
-" List all possible buffers with "gb" and accept a new buffer argument [1]
-" nnoremap <leader>g :ls<CR>:b
+" <TAB>: completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" TAB in general mode will move to text buffer
+nnoremap <silent> <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " Move lines up and down
 xnoremap K :move '<-2<CR>gv-gv

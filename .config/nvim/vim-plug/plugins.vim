@@ -54,4 +54,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'vimwiki/vimwiki'
 " bbye
 Plug 'moll/vim-bbye'
+" Ansible
+Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 call plug#end()
