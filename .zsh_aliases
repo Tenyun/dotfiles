@@ -9,13 +9,20 @@
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # list things
-alias ll='ls -AhlFN --color=auto --group-directories-first'
-alias cll='clear && ls -AhlFN --color=auto --group-directories-first'
-alias wl='watch ls -AhlFN --color=auto --group-directories-first'
-alias ls='ls -AhNF --color=auto --group-directories-first'
-alias ld='ls -d */ --color=auto'
-alias lt='tree -al'
-alias l.='ls -a | egrep "^\."'
+alias ll='exa -alg --group-directories-first'
+alias cll='clear && ll'
+alias wl='watch exa -alg --group-directories-first'
+alias ls='exa -a --group-directories-first'
+alias ld='exa -lgD'
+alias lt='exa -halg --group-directories-first --tree'
+alias l.='exa -a | egrep "^\."'
+# alias ll='ls -AhlFN --color=auto --group-directories-first'
+# alias cll='clear && ll'
+# alias wl='watch ls -AhlFN --color=auto --group-directories-first'
+# alias ls='ls -AhNF --color=auto --group-directories-first'
+# alias ld='ls -d */ --color=auto'
+# alias lt='tree -al'
+# alias l.='ls -a | egrep "^\."'
 
 # color grep
 alias grep='grep --color=auto'
@@ -54,7 +61,7 @@ alias mcclone='machinectl clone'
 alias mcreboot='machinectl reboot'
 alias mclogin='machinectl login'
 
-# df
+# df for dotfile management
 alias df='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
 alias dfs='df status'
 alias dfls='df ls-tree --full-tree -r --name-only HEAD'
@@ -78,3 +85,6 @@ alias ytc='rm ~/.config/mps-youtube/cache_py_* ; rm -rf ~/.cache/youtube-dl'
 # wireguard
 alias wg-up='sudo wg-quick up wg0'
 alias wg-down='sudo wg-quick down wg0'
+
+# systemd additions
+alias sc-list-services='systemctl list-units --type=service'
