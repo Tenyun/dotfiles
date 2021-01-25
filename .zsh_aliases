@@ -88,3 +88,6 @@ alias wg-down='sudo wg-quick down wg0'
 
 # systemd additions
 alias sc-list-services='systemctl list-units --type=service'
+
+# sudoedit
+alias se='sudoedit'
