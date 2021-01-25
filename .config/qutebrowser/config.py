@@ -1786,6 +1786,7 @@ c.url.searchengines = {
         'a': 'https://www.amazon.de/s?k={}',
         'arch': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
+        'v': 'https://vimawesome.com/?q={}',
         }
 
 ## Page(s) to open at the start.
