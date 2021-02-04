@@ -1,7 +1,8 @@
-set iskeyword+=-                      	" treat dash separated words as a word text object"
-set formatoptions-=cro                  " Stop newline continution of comments
-
 syntax enable                           " Enables syntax highlighing
+set nocompatible                " Enables us Vim specific features
+filetype off                    " Reset filetype detection first ...
+filetype plugin indent on       " ... and enable filetype detection
+set ttyfast                     " Indicate fast terminal conn for faster redraw
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set whichwrap+=<,>,[,],h,l
@@ -23,7 +24,7 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
 set number                              " Line numbers
-set cursorline                          " Enable highlighting of the current line
+" set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
@@ -34,11 +35,23 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+set incsearch                           " Shows the match while typing
+set hlsearch                            " Highlight found searches
+set ignorecase                          " Search case insensitive...
+set autowrite                           " Automatically save before :next, :make etc.
+set viminfo='100,<1000,s10,h 	          " Increases the memory limit from 50 lines to 1000 lines
+set iskeyword+=-                      	" treat dash separated words as a word text object"
+set nocursorline                        " Do not highlight cursor (speeds up highlighting)
+set nocursorcolumn                      " Do not highlight column (speeds up highlighting)
+set noerrorbells                        " No beeps
+set backspace=indent,eol,start          " Makes backspace key more powerful.
+set autoread                            " Automatically read changed files
+set noswapfile                          " Don't use swapfile
+set nobackup                            " Don't create annoying backup files
+set formatoptions-=cro                  " Stop newline continution of comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o          " Stop newline continution of comments
-set incsearch
 set guifont=JetBrainsMono\ Nerd\ Font
-
-
+set spelllang=de_de,en_us               " Spellchecking languages
 
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
