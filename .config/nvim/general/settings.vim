@@ -52,6 +52,8 @@ set formatoptions-=cro                  " Stop newline continution of comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o          " Stop newline continution of comments
 set guifont=JetBrainsMono\ Nerd\ Font
 set spelllang=de_de,en_us               " Spellchecking languages
+" Spellchecking for markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
