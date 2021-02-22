@@ -45,7 +45,8 @@ Plug 'plasticboy/vim-markdown'
 " Goldenview
 "Plug 'zhaocai/goldenview.vim'
 " Colortheme
-Plug 'fatih/molokai'
+Plug 'sainnhe/sonokai'
+" Plug 'fatih/molokai'
 " See what keys do like in emacs
 Plug 'liuchengxu/vim-which-key'
 " Terminal
