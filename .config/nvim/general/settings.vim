@@ -55,6 +55,9 @@ set spelllang=de_de,en_us               " Spellchecking languages
 " Spellchecking for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
 
+" disable gopass logging
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
 if has('unnamedplus')
