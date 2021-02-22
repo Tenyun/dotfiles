@@ -124,7 +124,21 @@ zstyle ':completion:*' special-dirs true
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
-#fpath=(~/.zfunc/ $fpath)
+freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }
+
+# Where to look for autoloaded function definitions
+fpath=(~/.config/zsh/zfunc/ $fpath)
+
+# Autoload all shell functions from all directories in $fpath (following
+# symlinks) that have the executable bit on (the executable bit is not
+# necessary, but gives you an easy way to stop the autoloading of a
+# particular shell function). $fpath should not be empty for this to work.
+for func in $^fpath/*(N-.x:t); autoload $func
+
+# automatically remove duplicates from these arrays
+typeset -U path cdpath fpath manpath
+
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
