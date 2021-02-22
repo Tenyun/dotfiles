@@ -675,6 +675,7 @@ c.content.autoplay = False
 ## lists.  The file `~/.config/qutebrowser/blocked-hosts` is always read
 ## if it exists.
 ## Type: List of Url
+c.content.blocking.hosts.lists = ['https://block.energized.pro/ultimate/formats/hosts']
 
 ## Which method of blocking ads should be used.  Support for Adblock Plus
 ## (ABP) syntax blocklists using Brave's Rust library requires the
