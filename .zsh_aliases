@@ -78,6 +78,10 @@ alias dfca='df commit -a'
 alias gp='gopass'
 alias gpl='gp ls'
 alias gpi='gp insert'
+
+# lazygit for all
+alias lg='lazygit'
+
 # lazygit for dotfiles
 alias dflg='lazygit --git-dir=$HOME/projects/.dotfiles --work-tree=$HOME'
 
