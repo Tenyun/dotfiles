@@ -358,5 +358,5 @@ let g:which_key_map.w = {
       \ 'U' : ['<plug>(wiki-list-uniq-local)' 		, 'uniq-local'],
       \ }
 
-"Register which key map
+" Register which key map
 call which_key#register('<Space>', "g:which_key_map")
