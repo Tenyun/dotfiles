@@ -1,9 +1,11 @@
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-actions',
-  \ 'coc-go',
   \ 'coc-sh',
+  \ 'coc-java-debug',
+  \ 'coc-java',
   \ 'coc-lists',
+  \ 'coc-emmet',
   \ 'coc-tasks',
   \ 'coc-pairs',
   \ 'coc-tsserver',
@@ -27,7 +29,5 @@ let g:coc_global_extensions = [
   \ ]
   " \ 'coc-tabnine',
   " \ 'coc-highlight',
-  " \ 'coc-java-debug',
-  " \ 'coc-java',
-  " \ 'coc-emmet',
+  " \ 'coc-bookmark',
 

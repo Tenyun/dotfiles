@@ -18,7 +18,7 @@ let g:which_key_sep = '→'
 " set timeoutlen=100
 
 " Coc Search & refactor
-nnoremap <leader>? CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
 let g:which_key_map['?'] = 'search word'
 
 " Not a fan of floating windows for this
@@ -39,22 +39,20 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
-" let g:which_key_map['.'] = [ ':e $MYVIMRC'                			, 'open init' ]
+let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
-" let g:which_key_map['n'] = [ ':NERDTreeToggle'       	  			                 , 'Toggle NERDTree']
+let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['o'] = [ ':RnvimrToggle'                                   , 'open' ]
 let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
 let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
 let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
-let g:which_key_map['d'] = [ ':bd'                        			               , 'delete buffer']
 let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
-let g:which_key_map['c'] = [ ':close'                                          , 'close' ]
-" let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
+let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " Group mappings
 
@@ -63,11 +61,18 @@ let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':CocCommand explorer'    , 'explorer'],
+      \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
+      \ 'l' : [':Bracey'                 , 'start live server'],
+      \ 'L' : [':BraceyStop'             , 'stop live server'],
+      \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
+      \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
+      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 's' : [':let @/ = ""'            , 'remove search highlight'],
       \ 't' : [':FloatermToggle'         , 'terminal'],
-      \ 'v' : [':Vista!!'                , 'tag viewer'],
+      \ 'v' : [':Codi'                   , 'virtual repl on'],
+      \ 'V' : [':Codi!'                  , 'virtual repl off'],
+      \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
       \ }
 
 " b is for buffer
@@ -326,6 +331,7 @@ let g:which_key_map.l = {
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
+      " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
 
 " t is for terminal
 let g:which_key_map.t = {
@@ -333,30 +339,63 @@ let g:which_key_map.t = {
       \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
+      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
+      \ 'n' : [':FloatermNew node'                              , 'node'],
+      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      \ 'p' : [':FloatermNew python'                            , 'python'],
+      \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew htop'                              , 'ytop'],
+      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
 " w is for wiki
-let g:which_key_map.w = {
-      \ 'name' : '+wiki' ,
-      \ 'w' : ['<Plug>VimwikiIndex' 			, 'Index'],
-      \ 'n' : ['<plug>(wiki-open)' 			, 'open'],
-      \ 'j' : ['<plug>(wiki-journal)' 			, 'journal'],
-      \ 'R' : ['<plug>(wiki-reload)' 			, 'reload'],
-      \ 'c' : ['<plug>(wiki-code-run)' 			, 'code-run'],
-      \ 'b' : ['<plug>(wiki-graph-find-backlinks)' 	, 'graph-find-backlinks'],
-      \ 'g' : ['<plug>(wiki-graph-in)' 			, 'graph-in'],
-      \ 'G' : ['<plug>(wiki-graph-out)' 		, 'graph-out'],
-      \ 'l' : ['<plug>(wiki-link-toggle)' 		, 'link-toggle'],
-      \ 'd' : ['<plug>(wiki-page-delete)' 		, 'page-delete'],
-      \ 'r' : ['<plug>(wiki-page-rename)' 		, 'page-rename'],
-      \ 't' : ['<plug>(wiki-page-toc)' 			, 'page-toc'],
-      \ 'T' : ['<plug>(wiki-page-toc-local)' 		, 'page-toc-local'],
-      \ 'e' : ['<plug>(wiki-export)' 			, 'export'],
-      \ 'u' : ['<plug>(wiki-list-uniq)' 		, 'list-uniq'],
-      \ 'U' : ['<plug>(wiki-list-uniq-local)' 		, 'uniq-local'],
-      \ }
+" let g:which_key_map.w = {
+"       \ 'name' : '+wiki' ,
+"       \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
+"       \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
+"       \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
+"       \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
+"       \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
+"       \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
+"       \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
+"       \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
+"       \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
+"       \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
+"       \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
+"       \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
+"       \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
+"       \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
+"       \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
+"       \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
+"       \ }
+
+" Global
+" <Plug>VimwikiIndex
+" <Plug>VimwikiTabIndex
+" <Plug>VimwikiUISelect
+" <Plug>VimwikiDiaryIndex
+" <Plug>VimwikiMakeDiaryNote
+" <Plug>VimwikiTabMakeDiaryNote
+" <Plug>VimwikiMakeYesterdayDiaryNote
+" <Plug>VimwikiMakeTomorrowDiaryNote
+"
+" " Local
+" <Plug>Vimwiki2HTML
+" <Plug>Vimwiki2HTMLBrowse
+" <Plug>VimwikiDiaryGenerateLinks
+" <Plug>VimwikiFollowLink
+" <Plug>VimwikiSplitLink
+" <Plug>VimwikiVSplitLink
+" <Plug>VimwikiTabnewLink
+" <Plug>VimwikiGoBackLink
+" <Plug>VimwikiNextLink
+" <Plug>VimwikiPrevLink
+" <Plug>VimwikiGoto
+" <Plug>VimwikiDeleteLink
+" <Plug>VimwikiRenameLink
+" <Plug>VimwikiAddHeaderLevel
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
