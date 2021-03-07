@@ -1,6 +1,7 @@
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-actions',
+  \ 'coc-diagnostic',
   \ 'coc-sh',
   \ 'coc-java-debug',
   \ 'coc-java',
@@ -26,6 +27,7 @@ let g:coc_global_extensions = [
   \ 'coc-yank',
   \ 'coc-json',
   \ 'coc-marketplace',
+  \ 'coc-go',
   \ ]
   " \ 'coc-tabnine',
   " \ 'coc-highlight',

@@ -123,7 +123,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Spellcheck
     Plug 'scrooloose/syntastic'
     " Golang
-    Plug 'fatih/vim-go'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " Vim-Wiki
+    Plug 'vimwiki/vimwiki'
 
     " Rainbow brackets
     " Plug 'luochen1990/rainbow'

@@ -42,6 +42,7 @@ let g:which_key_map['/'] = [ ':call Comment()'                                 ,
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
+let g:which_key_map['c'] = [ ':close'                                          , 'close' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
@@ -339,16 +340,16 @@ let g:which_key_map.t = {
       \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
-      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'n' : [':FloatermNew node'                              , 'node'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
-      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      \ 'y' : [':FloatermNew htop'                              , 'htop'],
       \ }
+      " \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      " \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
+      " \ 'n' : [':FloatermNew node'                              , 'node'],
+      " \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      " \ 'p' : [':FloatermNew python'                            , 'python'],
+      " \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
+      " \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
 
 " w is for wiki
 " let g:which_key_map.w = {
