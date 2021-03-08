@@ -35,7 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Surround
     Plug 'tpope/vim-surround'
     " Have the file system follow you around
-    Plug 'airblade/vim-rooter'
+    " Plug 'airblade/vim-rooter'
     " auto set indent settings
     Plug 'tpope/vim-sleuth'
     " Better Syntax Support
@@ -59,7 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'kevinhwang91/rnvimr'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
+    " Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
     Plug 'junegunn/fzf.vim'
     " Git
     Plug 'airblade/vim-gitgutter'
@@ -89,7 +89,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " undo time travel
     Plug 'mbbill/undotree'
     " Find and replace
-    Plug 'ChristianChiarulli/far.vim'
+    " Plug 'ChristianChiarulli/far.vim'
+    Plug 'brooth/far.vim'
     " Auto change html tags
     Plug 'AndrewRadev/tagalong.vim'
     " live server
@@ -115,6 +116,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'szw/vim-maximizer'
     " Neovim in Browser
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
+    " Telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 
     " Ansible
     Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
@@ -180,7 +185,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'neomake/neomake'
     " Plug 'mhinz/vim-signify'
     " Plug 'preservim/nerdcommenter'
-    " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
     " Plug 'romgrk/lib.kom'
     " Plug 'brooth/far.vim'

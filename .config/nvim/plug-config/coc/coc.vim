@@ -170,6 +170,14 @@ augroup MyCocExplorer
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer ' . d | endif
 augroup END
 
+" Sure the following script is called after CocExplorerOpenPost
+" function s:explorer_inited()
+" 	autocmd BufEnter * if (&filetype != 'coc-explorer') | exe 'silent! let dir = getcwd()'
+" 	autocmd BufEnter * call CocActionAsync("runCommand", "explorer.doAction", "closest", {"name": "cd", "args": [dir]})
+" endfunction
+
+" autocmd User CocExplorerOpenPost call s:explorer_inited()
+
 " Golang gopls auto import
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
