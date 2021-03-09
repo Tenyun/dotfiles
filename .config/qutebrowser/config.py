@@ -1454,7 +1454,7 @@ c.input.insert_mode.leave_on_load = True
 ## https://peter.sh/experiments/chromium-command-line-switches/ for a
 ## list) will work.
 ## Type: List of String
-# c.qt.args = []
+c.qt.args = ["enable-quic"]
 
 ## Additional environment variables to set. Setting an environment
 ## variable to null/None will unset it.
