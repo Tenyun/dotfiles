@@ -65,5 +65,8 @@ endif
 " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Set working directory
+autocmd BufEnter * silent! lcd %:p:h
+
 " You can't stop me
 cmap w!! w !sudo tee %
