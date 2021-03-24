@@ -81,6 +81,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/goyo.vim'
     " Snippets
     Plug 'honza/vim-snippets'
+    " Plug 'SirVer/ultisnips'
     Plug 'mattn/emmet-vim'
     " Interactive code
     Plug 'metakirby5/codi.vim'

@@ -1,5 +1,4 @@
 " Leader Key Maps
-
 let @s = 'veS"'
 
 " Timeout
@@ -119,7 +118,23 @@ let g:which_key_map.d = {
       \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
       \ }
 
+" F is for fold
+let g:which_key_map.F = {
+    \ 'name': '+fold',
+    \ 'O' : [':set foldlevel=20', 'open all'],
+    \ 'C' : [':set foldlevel=0', 'close all'],
+    \ 'c' : [':foldclose', 'close'],
+    \ 'o' : [':foldopen', 'open'],
+    \ '1' : [':set foldlevel=1', 'level1'],
+    \ '2' : [':set foldlevel=2', 'level2'],
+    \ '3' : [':set foldlevel=3', 'level3'],
+    \ '4' : [':set foldlevel=4', 'level4'],
+    \ '5' : [':set foldlevel=5', 'level5'],
+    \ '6' : [':set foldlevel=6', 'level6']
+    \ }
+
 " f is for find and replace
+      " \ 'f' : [':Farr'                     , 'file'],
 let g:which_key_map.f = {
       \ 'name' : '+find & replace' ,
       \ 'f' : [':Farr --source=vimgrep'    , 'file'],
@@ -156,37 +171,7 @@ let g:which_key_map.m = {
       " CoC throws an error
       " \ 'a' : [':CocCommand bookmark.annotate', 'annotate bookmark'],
 
-" " s is for search
-" let g:which_key_map.s = {
-"       \ 'name' : '+search' ,
-"       \ '/' : [':History/'              , 'history'],
-"       \ ';' : [':Commands'              , 'commands'],
-"       \ 'a' : [':Ag'                    , 'text Ag'],
-"       \ 'b' : [':BLines'                , 'current buffer'],
-"       \ 'B' : [':Buffers'               , 'open buffers'],
-"       \ 'c' : [':Commits'               , 'commits'],
-"       \ 'C' : [':BCommits'              , 'buffer commits'],
-"       \ 'f' : [':Files'                 , 'files'],
-"       \ 'g' : [':GFiles'                , 'git files'],
-"       \ 'G' : [':GFiles?'               , 'modified git files'],
-"       \ 'h' : [':History'               , 'file history'],
-"       \ 'H' : [':History:'              , 'command history'],
-"       \ 'l' : [':Lines'                 , 'lines'] ,
-"       \ 'm' : [':Marks'                 , 'marks'] ,
-"       \ 'M' : [':Maps'                  , 'normal maps'] ,
-"       \ 'p' : [':Helptags'              , 'help tags'] ,
-"       \ 'P' : [':Tags'                  , 'project tags'],
-"       \ 's' : [':CocList snippets'      , 'snippets'],
-"       \ 'S' : [':Colors'                , 'color schemes'],
-"       \ 't' : [':Rg'                    , 'text Rg'],
-"       \ 'T' : [':BTags'                 , 'buffer tags'],
-"       \ 'w' : [':Windows'               , 'search windows'],
-"       \ 'y' : [':Filetypes'             , 'file types'],
-"       \ 'z' : [':FZF'                   , 'FZF'],
-"       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
 
-" TODO fix FZF preview or just move to Telescope
 " s is for search powered by telescope
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -195,10 +180,10 @@ let g:which_key_map.s = {
       \ 'a' : [':Telescope lsp_code_actions'            , 'code_actions'],
       \ 'A' : [':Telescope builtin'                     , 'all'],
       \ 'b' : [':Telescope buffers'                     , 'buffers'],
-      \ 'B' : [':Telescope git_branches'                , 'git_branches'],
+      \ 'B' : [':Telescope git_branches'                , 'git branches'],
       \ 'd' : [':Telescope lsp_document_diagnostics'    , 'document_diagnostics'],
       \ 'D' : [':Telescope lsp_workspace_diagnostics'   , 'workspace_diagnostics'],
-      \ 'c' : [':Telescope git_bcommits'                , 'git_bcommits'],
+      \ 'c' : [':Telescope git_commits'                 , 'git_commits'],
       \ 'C' : [':Telescope git_bcommits'                , 'git_bcommits'],
       \ 'f' : [':Telescope find_files'                  , 'files'],
       \ 'F' : [':Telescope git_files'                   , 'git_files'],
@@ -206,12 +191,13 @@ let g:which_key_map.s = {
       \ 'G' : [':Telescope current_buffer_tags'         , 'buffer_tags'],
       \ 'h' : [':Telescope command_history'             , 'history'],
       \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
+      \ 'i' : [':Telescope media_files'                 , 'media files'],
       \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
       \ 'l' : [':Telescope loclist'                     , 'loclist'],
       \ 'm' : [':Telescope marks'                       , 'marks'],
+      \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
       \ 'o' : [':Telescope vim_options'                 , 'vim_options'],
       \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
-      \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
       \ 'p' : [':Telescope fd'                          , 'fd'],
       \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
       \ 's' : [':Telescope git_status'                  , 'git_status'],
@@ -225,17 +211,6 @@ let g:which_key_map.s = {
       \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
       \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
       \ }
-" 
-" :CocCommand fzf-preview.AllBuffers
-" :CocCommand fzf-preview.Changes
-" :CocCommand fzf-preview.Yankround
-" :CocCommand fzf-preview.CocReferences
-" :CocCommand fzf-preview.CocDiagnostics
-" :CocCommand fzf-preview.CocCurrentDiagnostics
-" :CocCommand fzf-preview.CocTypeDefinitions
-" \ 'l' : [':CocCommand fzf-preview.Bookmarks', 'list bookmarks'],
-" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
-" 
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -287,9 +262,6 @@ let g:which_key_map.g = {
       \ }
       " \ 'A' : [':Git add %'                        , 'add current'],
       " \ 'S' : [':!git status'                      , 'status'],
-" 
-" 
-" 
 
 " let g:which_key_map.G = {
 "       \ 'name' : '+gist' ,
@@ -346,66 +318,11 @@ let g:which_key_map.l = {
 " t is for terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
+      \ ';' : [':FloatermNew --wintype=normal --height=6'       , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew htop'                              , 'htop'],
       \ }
-      " \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
-      " \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      " \ 'n' : [':FloatermNew node'                              , 'node'],
-      " \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
-      " \ 'p' : [':FloatermNew python'                            , 'python'],
-      " \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
-      " \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
 
-" w is for wiki
-" let g:which_key_map.w = {
-"       \ 'name' : '+wiki' ,
-"       \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
-"       \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
-"       \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
-"       \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
-"       \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
-"       \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
-"       \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
-"       \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
-"       \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
-"       \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
-"       \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
-"       \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
-"       \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
-"       \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
-"       \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
-"       \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
-"       \ }
-
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
-" <Plug>VimwikiDeleteLink
-" <Plug>VimwikiRenameLink
-" <Plug>VimwikiAddHeaderLevel
-
-" Register which key map
 call which_key#register('<Space>', "g:which_key_map")
