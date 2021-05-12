@@ -29,6 +29,10 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# skim
+alias skg="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
+alias ska="sk --ansi -i -c 'ag --color "{}"'"
+
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
