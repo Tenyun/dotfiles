@@ -7,7 +7,7 @@ export LC_CTYPE=de_DE.UTF-8
 export LC_NUMERIC=C
 
 # History
-#SAVEHIST=1000
+SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Prompt
