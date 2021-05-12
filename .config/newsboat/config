@@ -13,7 +13,7 @@ browser "qutebrowser %u"
 #confirm-exit yes
 display-article-progress yes
 
-macro m set "browser" "tsp alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
+macro m set "browser" "setsid -f alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
 macro v set "browser" "tsp mpv %u" ; open-in-browser ; delete-article ; set browser "qutebrowser %u" ;
 download-path "~/music/collection/podcasts/%n"
 max-downloads 4
