@@ -1,0 +1,3 @@
+nvdiff () {
+    nvim -c 'let g:DirDiffExcludes=".git"' -c 'DirDiff ~/repos/nvcode ~/.config/nvim'
+    }

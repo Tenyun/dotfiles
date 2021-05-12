@@ -1,0 +1,109 @@
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# list things
+alias ll='exa -alg --group-directories-first'
+alias cll='clear && ll'
+alias wl='watch exa -alg --group-directories-first'
+alias ls='exa -a --group-directories-first'
+alias ld='exa -lgD'
+alias lt='exa -halg --group-directories-first --tree'
+alias l.='exa -a | egrep "^\."'
+# alias ll='ls -AhlFN --color=auto --group-directories-first'
+# alias cll='clear && ll'
+# alias wl='watch ls -AhlFN --color=auto --group-directories-first'
+# alias ls='ls -AhNF --color=auto --group-directories-first'
+# alias ld='ls -d */ --color=auto'
+# alias lt='tree -al'
+# alias l.='ls -a | egrep "^\."'
+
+# color grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# skim
+alias skg="sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'"
+alias ska="sk --ansi -i -c 'ag --color "{}"'"
+
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+
+# pacman/yay/paru
+# alias yi='yay -S'
+# alias ys='yay -Ss'
+# alias yr='yay -Rs'
+alias yi='paru -S'
+alias ys='paru -Ss'
+alias yr='paru -Rs'
+
+# cal
+alias mycal='cal -myw'
+
+# Music
+alias play='mpsyt playurl'
+alias ts='tagutil'
+alias te='tagutil edit'
+alias bi='beet import'
+alias bl='beet ls'
+
+# Programming
+alias exercism='~/projects/exercism/exercism'
+
+# machinectl
+alias mclist='machinectl list'
+alias mcstart='machinectl start'
+alias mcstop='machinectl stop'
+alias mcclone='machinectl clone'
+alias mcreboot='machinectl reboot'
+alias mclogin='machinectl login'
+
+# df for dotfile management
+alias df='/usr/bin/git --git-dir=$HOME/projects/.dotfiles/ --work-tree=$HOME/'
+alias dfs='df status'
+alias dfls='df ls-tree --full-tree -r --name-only HEAD'
+alias dfl='df log --oneline'
+alias dfa='df add'
+alias dfap='df add -p'
+alias dfr='df rm -r --cached'
+alias dfss='df status -s'
+alias dfp='df push'
+alias dfc='df commit'
+alias dfca='df commit -a'
+
+# gopass
+alias gp='gopass'
+alias gpl='gp ls'
+alias gpi='gp insert'
+
+# lazygit for all
+alias lg='lazygit'
+
+# lazygit for dotfiles
+alias dflg='lazygit --git-dir=$HOME/projects/.dotfiles --work-tree=$HOME'
+
+# system things
+alias r='/usr/share/nvim/runtime/macros/less.sh'
+alias e='$EDITOR'
+alias ytc='rm ~/.config/mps-youtube/cache_py_* ; rm -rf ~/.cache/youtube-dl'
+
+# wireguard
+alias wg-up='sudo wg-quick up wg0'
+alias wg-down='sudo wg-quick down wg0'
+
+# systemd additions
+alias sc-list-services='systemctl list-units --type=service'
+
+# sudoedit
+alias se='sudoedit'
+
