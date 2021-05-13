@@ -9,6 +9,7 @@ export LC_NUMERIC=C
 # History
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+setopt share_history
 
 # Prompt
 # see ~/.config/starship.toml for configuration
@@ -63,4 +64,7 @@ for func in $^fpath/*(N-.x:t); autoload $func
 typeset -U path cdpath fpath manpath
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
