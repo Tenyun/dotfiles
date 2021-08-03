@@ -1,0 +1,9 @@
+fbak () {
+	if [ -z "$1" ]
+	then
+		echo "Please add a file/folder name to the command"
+		return
+	else
+		cp -rv "$1"{,-$(date +%F-%T).bak}
+	fi
+}

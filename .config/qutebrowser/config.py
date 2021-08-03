@@ -699,7 +699,7 @@ c.content.blocking.method = 'auto'
 ## given page, use the `content.blocking.enabled` setting with a URL
 ## pattern instead.
 ## Type: List of UrlPattern
-# c.content.blocking.whitelist = []
+c.content.blocking.whitelist = ['grafana.org']
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -1563,7 +1563,7 @@ c.scrolling.smooth = True
 
 ## Load a restored tab as soon as it takes focus.
 ## Type: Bool
-# c.session.lazy_restore = False
+c.session.lazy_restore = True
 
 ## Languages to use for spell checking. You can check for available
 ## languages and install dictionaries using scripts/dictcli.py. Run the

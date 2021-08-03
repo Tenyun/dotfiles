@@ -1,0 +1,27 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                220
+Xft.antialias:		true
+Xft.rgba:		rgb
+Xft.hinting:	 	true
+Xft.hintstyle:		hintslight
+#*.font: 		monospace:size=32
+
+#*color0: #1c1e15
+#*color1: #a0c4cf
+#*color2: #b4b7b0
+#*color3: #8997a4
+#*color4: #96aab7
+#*color5: #a79c92
+#*color6: #a594c8
+#*color7: #c6c6c4
+#*color8: #54564f
+#*color9: #a0c4cf
+#*color10: #b4b7b0
+#*color11: #8997a4
+#*color12: #96aab7
+#*color13: #a79c92
+#*color14: #a594c8
+#*color15: #c6c6c4

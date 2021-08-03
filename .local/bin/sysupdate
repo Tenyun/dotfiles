@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 
-yay -Syu --topdown --cleanafter --removemake
+# yay -Syu --topdown --cleanafter --removemake
+paru -Syu
 sudo paccache -r
-pkill -RTMIN+8 i3blocks
+pkill -RTMIN+8 "${STATUSBAR:-dwmblocks}"
 
 printf "\\nUpgrade complete."
-[ "$(file /boot/vmlinuz-linux | cut -d " " -f 9)" != "$(uname -r)" ] && printf '\n\e[1;91m%-6s\e[m' "New Kernel Update - A reboot is required!!!"
+[ "$(file /boot/vmlinuz-linux-zen | cut -d " " -f 9)" != "$(uname -r)" ] && printf '\n\e[1;91m%-6s\e[m' "New Kernel Update - A reboot is required!!!"
 printf "\\nPress <Enter> to exit window.\\n\\n"
-read -r
+read -r _

@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -8,6 +9,9 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Use $XINITRC variable if file exists.
+[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
 # list things
 alias ll='exa -alg --group-directories-first'
 alias cll='clear && ll'
@@ -16,13 +20,13 @@ alias ls='exa -a --group-directories-first'
 alias ld='exa -lgD'
 alias lt='exa -halg --group-directories-first --tree'
 alias l.='exa -a | egrep "^\."'
-# alias ll='ls -AhlFN --color=auto --group-directories-first'
-# alias cll='clear && ll'
-# alias wl='watch ls -AhlFN --color=auto --group-directories-first'
-# alias ls='ls -AhNF --color=auto --group-directories-first'
-# alias ld='ls -d */ --color=auto'
-# alias lt='tree -al'
-# alias l.='ls -a | egrep "^\."'
+
+# Verbosity
+alias	cp="cp -v"
+alias mv="mv -v"
+alias	rm="rm -vI"
+alias	bc="bc -ql"
+alias	mkd="mkdir -pv"
 
 # color grep
 alias grep='grep --color=auto'
@@ -106,4 +110,7 @@ alias sc-list-services='systemctl list-units --type=service'
 
 # sudoedit
 alias se='sudoedit'
+
+# eureka
+alias idea="eureka"
 

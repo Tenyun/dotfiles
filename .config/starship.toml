@@ -1,0 +1,15 @@
+# disable new line at start
+add_newline = false
+
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"
+
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$cmake\
+$golang[➜](bold green) """
+

@@ -1,0 +1,25 @@
+#!/bin/sh 
+#===============================================================================
+#
+#          FILE: test.sh
+#
+#         USAGE: ./dmenupwdstore
+#
+#   DESCRIPTION: copy password from gopass to clipboard
+#
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Tenyun (Sysadmin), tenyun@disroot.org
+#  ORGANIZATION: -
+#       CREATED: 18.02.2021 18:09:34
+#      REVISION:  ---
+#===============================================================================
+
+set -o nounset                                  # Treat unset variables as an error
+
+
+
+
+gopass ls --flat | dmenu -i -p 'Copy Password:' | xargs --no-run-if-empty gopass show -c

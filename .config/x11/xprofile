@@ -9,19 +9,20 @@
 
 # Fix Gnome Apps Slow  Start due to failing services
 # Add this when you include flatpak in your system
-dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+#dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
-mpd &			# music player daemon-you might prefer it as a service though
+mpd & # music player daemon-you might prefer it as a service though
 #remaps &		# run the remaps script, switching caps/esc and more; check it for more info
-~/.config/wpg/wp_init.sh &			# set the background with the `setbg` script
-#xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/Xresources &	# Uncomment to use Xresources colors/settings on startup
-picom -fb &		# xcompmgr for transparency
-dunst &			# dunst for notifications
-xset r rate 360 40 &	# Speed xrate up
+~/.config/wpg/wp_init.sh & # set the background with the `setbg` script
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &	# Uncomment to use Xresources colors/settings on startup
+picom -fb &          # xcompmgr for transparency
+dunst &              # dunst for notifications
+xset r rate 360 40 & # Speed xrate up
 xset s off &
 xset s noblank &
 xset -dpms &
 xset dpms 0 0 0 &
-setxkbmap -layout de & 	# Set German keyboard layout
-eval &(ssh-agent) &
-#unclutter &		# Remove mouse when idle
+setxkbmap -layout de & # Set German keyboard layout
+eval &
+#(ssh-agent) &
+unclutter &		# Remove mouse when idle
