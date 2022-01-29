@@ -1,1 +1,0 @@
-/home/tenyun/.config/zsh/zshrc
