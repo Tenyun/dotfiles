@@ -6,6 +6,6 @@ sudo paccache -r
 pkill -RTMIN+8 "${STATUSBAR:-dwmblocks}"
 
 printf "\\nUpgrade complete."
-[ "$(file /boot/vmlinuz-linux-zen | cut -d " " -f 9)" != "$(uname -r)" ] && printf '\n\e[1;91m%-6s\e[m' "New Kernel Update - A reboot is required!!!"
-printf "\\nPress <Enter> to exit window.\\n\\n"
+[ "$(file /boot/vmlinuz-linux-zen | cut -d "," -f 3 | { read gmt ; date -d "$gmt" '+%s'; })" != "$(uname -v | cut -d "," -f 2 | { read gmt ; date -d "$gmt" '+%s'; })" ] && printf '\n\e[1;91m%-6s\e[m' "New Kernel Update - A reboot is required!!!"
+printf "\\nPress <Return> to exit window.\\n\\n"
 read -r _
