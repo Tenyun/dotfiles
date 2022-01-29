@@ -1914,6 +1914,7 @@ c.url.searchengines = {
         'arch': 'https://www.archlinux.org/packages/?q={}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         'v': 'https://vimawesome.com/?q={}',
+        'd': 'https://hub.docker.com/search?q={}&type=image'
         }
 
 ## Page(s) to open at the start.
