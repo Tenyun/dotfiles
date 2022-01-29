@@ -22,3 +22,4 @@ bind-key S save-all
 
 confirm-delete-all-articles no
 confirm-mark-feed-read no
+ignore-article "*" "title =~ \"How to Install\""
