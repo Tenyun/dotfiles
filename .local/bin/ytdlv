@@ -7,9 +7,9 @@ else
 	URL="$1"
 fi
 
-title=$(youtube-dl -e "$URL")
+title=$(yt-dlp "$URL" -O "%(title)s")
 notify-send "⬇ Start Video-Download of" "$title"
 
-youtube-dl --ignore-config --add-metadata -ic -f bestvideo+bestaudio/best "$URL" -o "$HOME/videos/raw/%(title)s.%(ext)s" --restrict-filenames
+yt-dlp --ignore-config --add-metadata -ic -f bestvideo+bestaudio/best "$URL" -o "$HOME/videos/raw/%(title)s.%(ext)s" --restrict-filenames
 
 notify-send "✔ Finish Video-Download of" "$title"

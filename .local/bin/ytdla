@@ -7,9 +7,9 @@ else
 	URL="$1"
 fi
 
-title=$(youtube-dl -e "$URL")
+title=$(yt-dlp "$URL" -O "%(title)s")
 notify-send "⬇ Start Audio-Download of" "$title"
 
-youtube-dl --ignore-config -x --audio-format flac --add-metadata -ic -f bestaudio -o '$HOME/music/untagged/%(title)s.%(ext)s' --restrict-filenames "$URL"
+yt-dlp --ignore-config -x --audio-format flac --add-metadata --embed-thumbnail --parse-metadata "title:%(artist)s - %(title)s" -ic -f bestaudio -o '$HOME/music/untagged/%(title)s.%(ext)s' --restrict-filenames "$URL"
 
 notify-send "✔ Finish Audio-Download of" "$title"
