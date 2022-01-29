@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Prints the current volume or 🔇 if muted. Uses PulseAudio by default,
+# Prints the current volume or 🔇 if muted.
 
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e pulsemixer ;;
@@ -19,10 +19,12 @@ vol="$(pamixer --get-volume)"
 
 if [ "$vol" -gt "70" ]; then
 	icon="🔊"
-elif [ "$vol" -lt "30" ]; then
+elif [ "$vol" -gt "30" ]; then
+	icon="🔉"
+elif [ "$vol" -gt "0" ]; then
 	icon="🔈"
 else
-	icon="🔉"
+        echo 🔇 && exit
 fi
 
 echo "$icon$vol%"
