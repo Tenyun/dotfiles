@@ -1966,7 +1966,8 @@ c.zoom.default = '110%'
 ## Bindings for normal mode
 config.bind('<Shift-Left>', 'tab-prev')
 config.bind('<Shift-Right>', 'tab-next')
-config.bind('M', 'hint links spawn --detach alacritty --title mpsyt -e mpsyt playurl {hint-url}')
+# config.bind('M', 'hint links spawn --detach alacritty --title mpsyt -e mpsyt playurl {hint-url}')
+config.bind('M', 'hint links spawn --detach alacritty --title mpv-music -e ytpa {hint-url}')
 config.bind('V', 'hint links spawn --detach mpv {hint-url}')
 config.bind('v', 'spawn mpv {url}')
 config.bind('<Alt-l>', 'hint links userscript ~/.local/bin/rssadd')
