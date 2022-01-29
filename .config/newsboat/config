@@ -12,8 +12,10 @@ save-path "~/documents/archived-articles/rss/"
 browser "qutebrowser %u"
 #confirm-exit yes
 display-article-progress yes
+datetime-format "%b, %d, %R"
 
-macro m set "browser" "setsid -f alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
+# macro m set "browser" "setsid -f alacritty --title mpsyt -e mpsyt playurl %u" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
+macro m set "browser" "setsid -f alacritty --title mpv-music -e mpv %u --no-video" ; open-in-browser-and-mark-read ; set browser "qutebrowser %u" ; 
 macro v set "browser" "tsp mpv %u" ; open-in-browser ; delete-article ; set browser "qutebrowser %u" ;
 download-path "~/music/collection/podcasts/%n"
 max-downloads 4
@@ -22,4 +24,5 @@ bind-key S save-all
 
 confirm-delete-all-articles no
 confirm-mark-feed-read no
+
 ignore-article "*" "title =~ \"How to Install\""
