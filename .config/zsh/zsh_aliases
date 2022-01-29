@@ -23,7 +23,7 @@ alias l.='exa -a | egrep "^\."'
 
 # Verbosity
 alias	cp="cp -v"
-alias mv="mv -v"
+alias 	mv="mv -v"
 alias	rm="rm -vI"
 alias	bc="bc -ql"
 alias	mkd="mkdir -pv"
