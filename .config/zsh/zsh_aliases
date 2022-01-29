@@ -96,6 +96,8 @@ alias lg='lazygit'
 # lazygit for dotfiles
 alias dflg='lazygit --git-dir=$HOME/projects/.dotfiles --work-tree=$HOME'
 
+# gitui
+alias dfgui='gitui -d $HOME/projects/.dotfiles -w $HOME'
 # system things
 alias r='/usr/share/nvim/runtime/macros/less.sh'
 alias e='$EDITOR'
@@ -113,4 +115,3 @@ alias se='sudoedit'
 
 # eureka
 alias idea="eureka"
-
