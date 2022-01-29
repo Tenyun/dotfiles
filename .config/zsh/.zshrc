@@ -23,7 +23,8 @@ setopt share_history          # share command history data
 # see ~/.config/starship.toml for configuration
 eval "$(starship init zsh)"
 
-#zstyle ':completion:*' special-dirs true
+# zoxide
+eval "$(zoxide init zsh)"
 
 # Alias
 source ~/.config/zsh/zsh_aliases
@@ -58,13 +59,15 @@ for func in $^fpath/*(N-.x:t); autoload $func
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 WORDCHARS=''
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on successive tab press
+setopt complete_in_word
+setopt always_to_end
 
 # Source plugins
 # broot
@@ -73,21 +76,19 @@ source ~/.config/broot/launcher/bash/br
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # sudo
 source ~/.config/zsh/plugins/sudo/sudo.plugin.zsh
-# systemd
-source ~/.config/zsh/plugins/systemd/systemd.plugin.zsh
 # gitfast
 source ~/.config/zsh/plugins/gitfast/gitfast.plugin.zsh
 # golang
-setopt complete_in_word
-setopt always_to_end
 source ~/.config/zsh/plugins/golang/golang.plugin.zsh
-# fzf
-source ~/.config/zsh/plugins/fzf/fzf.plugin.zsh
 # ssh-agent
 source ~/.config/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
-# extract
-source ~/.config/zsh/plugins/extract/extract.plugin.zsh
 # zsh_reload
-source ~/.config/zsh/plugins/zsh_reload/zsh_reload.plugin.zsh
+#source ~/.config/zsh/plugins/zsh_reload/zsh_reload.plugin.zsh
+# fzf
+source /usr/share/zsh/plugins/zsh-fzy/zsh-fzy.plugin.zsh
+# systemd
+source /usr/share/zsh/plugins/zsh-systemd/systemd.plugin.zsh
+# extract
+source /usr/share/zsh/plugins/zsh-extract/extract.plugin.zsh
 # zsh-fast-syntax-highlighting
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
