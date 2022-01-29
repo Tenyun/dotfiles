@@ -9,7 +9,9 @@
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 #export PATH="$PATH:${$(find $HOME/.local/bin -type d -printf %p:)%%:}"
 # add cargo binary folder to $PATH
-export PATH="${PATH}:$HOME/.cargo/bin"
+export PATH="${PATH}:$HOME/.local/share/.cargo/bin"
+# add go binary folder to $PATH
+export PATH="${PATH}:$HOME/.local/share/go/bin"
 
 #unsetopt PROMPT_SP
 
@@ -70,9 +72,9 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
 # Ansible
-export ANSIBLE_CONFIG="$HOME/projects/ansible/ansible.cfg"
+export ANSIBLE_CONFIG="$HOME/projects/homelab/ansible/ansible.cfg"
 # export ANSIBLE_INVENTORY="~/projects/ansible/inventories/production/hosts"
-export ANSIBLE_PLAYBOOK_DIR="$HOME/projects/ansible/playbooks/"
+export ANSIBLE_PLAYBOOK_DIR="$HOME/projects/homelab/ansible/playbooks/"
 
 export SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
