@@ -1,5 +1,5 @@
 # Show fanspeed and cpu temp from ipmi pve server
 wipmi () {
-        watch "ipmitool -I lanplus -U ADMIN -P ADMIN -H 10.0.0.5 sensor |
-        awk '/FAN1|FAN2|FAN4|CPU Temp/{print}'"
+        watch "ipmitool -I lanplus -U ADMIN -P ADMIN -H 10.0.0.11 sensor |
+        awk '/FAN1|FAN2|FAN3|FAN4|CPU Temp/{print}'"
     }
