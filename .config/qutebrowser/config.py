@@ -12,7 +12,7 @@
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
-config.load_autoconfig(False)
+config.load_autoconfig(True)
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -55,12 +55,18 @@ c.auto_save.session = True
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
 # c.backend = 'webengine'
 
-## This setting can be used to map keys to other keys. When the key used
-## as dictionary-key is pressed, the binding for the key used as
-## dictionary-value is invoked instead. This is useful for global
-## remappings of keys, for example to map Ctrl-[ to Escape. Note that
-## when a key is bound (via `bindings.default` or `bindings.commands`),
-## the mapping is ignored.
+## Map keys to other keys, so that they are equivalent in all modes. When
+## the key used as dictionary-key is pressed, the binding for the key
+## used as dictionary-value is invoked instead. This is useful for global
+## remappings of keys, for example to map <Ctrl-[> to <Escape>. NOTE:
+## This should only be used if two keys should always be equivalent, i.e.
+## for things like <Enter> (keypad) and <Return> (non-keypad). For normal
+## command bindings, qutebrowser works differently to vim: You always
+## bind keys to commands, usually via `:bind` or `config.bind()`. Instead
+## of using this setting, consider finding the command a key is bound to
+## (e.g. via `:bind gg`) and then binding the same command to the desired
+## key. Note that when a key is bound (via `bindings.default` or
+## `bindings.commands`), the mapping is ignored.
 ## Type: Dict
 # c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Ctrl-I>': '<Tab>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
 
@@ -286,6 +292,10 @@ c.changelog_after_upgrade = 'minor'
 ## Background color for the selected item in filename prompts.
 ## Type: QssColor
 # c.colors.prompts.selected.bg = 'grey'
+
+## Foreground color for the selected item in filename prompts.
+## Type: QssColor
+# c.colors.prompts.selected.fg = 'white'
 
 ## Background color of the statusbar in caret mode.
 ## Type: QssColor
@@ -526,7 +536,9 @@ c.changelog_after_upgrade = 'minor'
 ##   - smart: Apply dark mode based on image content. Not available with Qt 5.15.0.
 c.colors.webpage.darkmode.policy.images = 'smart'
 
-## Which pages to apply dark mode to.
+## Which pages to apply dark mode to. The underlying Chromium setting has
+## been removed in QtWebEngine 5.15.3, thus this setting is ignored
+## there. Instead, every element is now classified individually.
 ## Type: String
 ## Valid values:
 ##   - always: Apply dark mode filter to all frames, regardless of content.
@@ -548,9 +560,17 @@ c.colors.webpage.darkmode.policy.images = 'smart'
 ## Type: Int
 # c.colors.webpage.darkmode.threshold.text = 256
 
-## Force `prefers-color-scheme: dark` colors for websites.
-## Type: Bool
-# c.colors.webpage.prefers_color_scheme_dark = False
+## Value to use for `prefers-color-scheme:` for websites. The "light"
+## value is only available with QtWebEngine 5.15.2+. On older versions,
+## it is the same as "auto". The "auto" value is broken on QtWebEngine
+## 5.15.2 due to a Qt bug. There, it will fall back to "light"
+## unconditionally.
+## Type: String
+## Valid values:
+##   - auto: Use the system-wide color scheme setting.
+##   - light: Force a light theme.
+##   - dark: Force a dark theme.
+# c.colors.webpage.preferred_color_scheme = 'auto'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -665,6 +685,12 @@ c.content.autoplay = False
 ## Type: Bool
 # c.content.blocking.enabled = True
 
+## Block subdomains of blocked hosts. Note: If only a single subdomain is
+## blocked but should be allowed, consider using
+## `content.blocking.whitelist` instead.
+## Type: Bool
+# c.content.blocking.hosts.block_subdomains = True
+
 ## List of URLs to host blocklists for the host blocker.  Only used when
 ## the simple host-blocker is used (see `content.blocking.method`).  The
 ## file can be in one of the following formats:  - An `/etc/hosts`-like
@@ -675,7 +701,7 @@ c.content.autoplay = False
 ## lists.  The file `~/.config/qutebrowser/blocked-hosts` is always read
 ## if it exists.
 ## Type: List of Url
-c.content.blocking.hosts.lists = ['https://block.energized.pro/ultimate/formats/hosts']
+# c.content.blocking.hosts.lists = ['https://block.energized.pro/ultimate/formats/hosts']
 
 ## Which method of blocking ads should be used.  Support for Adblock Plus
 ## (ABP) syntax blocklists using Brave's Rust library requires the
@@ -699,7 +725,7 @@ c.content.blocking.method = 'auto'
 ## given page, use the `content.blocking.enabled` setting with a URL
 ## pattern instead.
 ## Type: List of UrlPattern
-c.content.blocking.whitelist = ['grafana.org']
+# c.content.blocking.whitelist = []
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -736,7 +762,14 @@ c.content.blocking.whitelist = ['grafana.org']
 ## unknown-3rdparty` per-domain on QtWebKit will have the same effect as
 ## `all`. If this setting is used with URL patterns, the pattern gets
 ## applied to the origin/first party URL of the page making the request,
-## not the request URL.
+## not the request URL. With QtWebEngine 5.15.0+, paths will be stripped
+## from URLs, so URL patterns using paths will not match. With
+## QtWebEngine 5.15.2+, subdomains are additionally stripped as well, so
+## you will typically need to set this setting for `example.com` when the
+## cookie is set on `somesubdomain.example.com` for it to work properly.
+## To debug issues with this setting, start qutebrowser with `--debug
+## --logfilter network --debug-flag log-cookies` which will show all
+## cookies being set.
 ## Type: String
 ## Valid values:
 ##   - all: Accept all cookies.
@@ -752,7 +785,7 @@ c.content.cookies.accept = 'no-3rdparty'
 ## Default encoding to use for websites. The encoding must be a string
 ## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
 ## Type: String
-c.content.default_encoding = 'utf-8'
+# c.content.default_encoding = 'iso-8859-1'
 
 ## Allow websites to share screen content.
 ## Type: BoolAsk
@@ -805,8 +838,10 @@ c.content.geolocation = False
 # c.content.headers.do_not_track = True
 
 ## When to send the Referer header. The Referer header tells websites
-## from which website you were coming from when visiting them. No restart
-## is needed with QtWebKit.
+## from which website you were coming from when visiting them. Note that
+## with QtWebEngine, websites can override this preference by setting the
+## `Referrer-Policy:` header, so that any websites visited from them get
+## the full referer. No restart is needed with QtWebKit.
 ## Type: String
 ## Valid values:
 ##   - always: Always send the Referer.
@@ -938,7 +973,34 @@ c.content.geolocation = False
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications = 'ask'
+# c.content.notifications.enabled = 'ask'
+
+## What notification presenter to use for web notifications. Note that
+## not all implementations support all features of notifications: - With
+## PyQt 5.14, any setting other than `qt` does not support  the `click`
+## and   `close` events, as well as the `tag` option to replace existing
+## notifications. - The `qt` and `systray` options only support showing
+## one notification at the time   and ignore the `tag` option to replace
+## existing notifications. - The `herbe` option only supports showing one
+## notification at the time and doesn't   show icons. - The `messages`
+## option doesn't show icons and doesn't support the `click` and
+## `close` events.
+## Type: String
+## Valid values:
+##   - auto: Tries `libnotify`, `systray` and `messages`, uses the first one available without showing error messages.
+##   - qt: Use Qt's native notification presenter, based on a system tray icon. Switching from or to this value requires a restart of qutebrowser. Recommended over `systray` on PyQt 5.14.
+##   - libnotify: Shows messages via DBus in a libnotify-compatible way. If DBus isn't available, falls back to `systray` or `messages`, but shows an error message.
+##   - systray: Use a notification presenter based on a systray icon. Falls back to `libnotify` or `messages` if not systray is available. This is a reimplementation of the `qt` setting value, but with the possibility to switch to it at runtime.
+##   - messages: Show notifications as qutebrowser messages. Most notification features aren't available.
+##   - herbe: (experimental!) Show notifications using herbe (github.com/dudik/herbe). Most notification features aren't available.
+# c.content.notifications.presenter = 'auto'
+
+## Whether to show the origin URL for notifications. Note that URL
+## patterns with this setting only get matched against the origin part of
+## the URL, so e.g. paths in patterns will never match. Note that with
+## the `qt` presenter, origins are never shown.
+## Type: Bool
+# c.content.notifications.show_origin = True
 
 ## Allow pdf.js to view PDF files in the browser. Note that the files can
 ## still be downloaded by clicking the download button in the pdf.js
@@ -959,6 +1021,14 @@ c.content.pdfjs = True
 ## Type: Bool
 # c.content.plugins = False
 
+## Request websites to minimize non-essentials animations and motion.
+## This results in the `prefers-reduced-motion` CSS media query to
+## evaluate to `reduce` (rather than `no-preference`). On Windows, if
+## this setting is set to False, the system-wide animation setting is
+## considered.
+## Type: Bool
+# c.content.prefers_reduced_motion = False
+
 ## Draw the background color and images also when the page is printed.
 ## Type: Bool
 # c.content.print_element_backgrounds = True
@@ -971,7 +1041,8 @@ c.content.pdfjs = True
 ## Proxy to use. In addition to the listed values, you can use a
 ## `socks://...` or `http://...` URL. Note that with QtWebEngine, it will
 ## take a couple of seconds until the change is applied, if this value is
-## changed at runtime.
+## changed at runtime. Authentication for SOCKS proxies isn't supported
+## due to Chromium limitations.
 ## Type: Proxy
 ## Valid values:
 ##   - system: Use the system wide proxy.
@@ -994,15 +1065,35 @@ c.content.pdfjs = True
 ## Enable quirks (such as faked user agent headers) needed to get
 ## specific sites to work properly.
 ## Type: Bool
-# c.content.site_specific_quirks = True
+# c.content.site_specific_quirks.enabled = True
 
-## Validate SSL handshakes.
-## Type: BoolAsk
+## Disable a list of named quirks. The js-string-replaceall quirk is
+## needed for Nextcloud Calendar < 2.2.0 with QtWebEngine < 5.15.3.
+## However, the workaround is not fully compliant to the ECMAScript spec
+## and might cause issues on other websites, so it's disabled by default.
+## Type: FlagList
 ## Valid values:
-##   - true
-##   - false
-##   - ask
-# c.content.ssl_strict = 'ask'
+##   - ua-whatsapp
+##   - ua-google
+##   - ua-slack
+##   - ua-googledocs
+##   - js-whatsapp-web
+##   - js-discord
+##   - js-string-replaceall
+##   - js-globalthis
+##   - js-object-fromentries
+##   - misc-krunker
+##   - misc-mathml-darkmode
+# c.content.site_specific_quirks.skip = ['js-string-replaceall']
+
+## How to proceed on TLS certificate errors.
+## Type: String
+## Valid values:
+##   - ask: Ask how to proceed for every certificate error (unless non-overridable due to HSTS).
+##   - ask-block-thirdparty: Ask how to proceed for normal page loads, but silently block resource loads.
+##   - block: Automatically block loading on certificate errors.
+##   - load-insecurely: Force loading pages despite certificate errors. This is *insecure* and should be avoided. Instead of using this, consider fixing the underlying issue or importing a self-signed certificate via `certutil` (or Chromium) instead.
+# c.content.tls.certificate_errors = 'ask'
 
 ## How navigation requests to URLs with unknown schemes are handled.
 ## Type: String
@@ -1072,6 +1163,13 @@ c.downloads.location.directory = "~/downloads/"
 ##   - bottom
 # c.downloads.position = 'top'
 
+## Automatically abort insecure (HTTP) downloads originating from secure
+## (HTTPS) pages. For per-domain settings, the relevant URL is the URL
+## initiating the download, not the URL the download itself is coming
+## from. It's not recommended to set this setting to false globally.
+## Type: Bool
+# c.downloads.prevent_mixed_content = True
+
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
 ## Type: Int
@@ -1090,6 +1188,18 @@ c.editor.command = ['nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 ## Type: Encoding
 # c.editor.encoding = 'utf-8'
 
+## Delete the temporary file upon closing the editor.
+## Type: Bool
+# c.editor.remove_file = True
+
+## Command (and arguments) to use for selecting a single folder in forms.
+## The command should write the selected folder path to the specified
+## file or stdout. The following placeholders are defined: * `{}`:
+## Filename of the file to be written to. If not contained in any
+## argument, the   standard output of the command is read instead.
+## Type: ShellCommand
+# c.fileselect.folder.command = ['xterm', '-e', 'ranger', '--choosedir={}']
+
 ## Handler for selecting file(s) in forms. If `external`, then the
 ## commands specified by `fileselect.single_file.command` and
 ## `fileselect.multiple_files.command` are used to select one or multiple
@@ -1101,16 +1211,19 @@ c.editor.command = ['nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 # c.fileselect.handler = 'default'
 
 ## Command (and arguments) to use for selecting multiple files in forms.
-## The command should write the selected file paths to the specified
-## file, separated by newlines. The following placeholders are defined: *
-## `{}`: Filename of the file to be written to.
+## The command should write the selected file paths to the specified file
+## or to stdout, separated by newlines. The following placeholders are
+## defined: * `{}`: Filename of the file to be written to. If not
+## contained in any argument, the   standard output of the command is
+## read instead.
 ## Type: ShellCommand
 # c.fileselect.multiple_files.command = ['xterm', '-e', 'ranger', '--choosefiles={}']
 
 ## Command (and arguments) to use for selecting a single file in forms.
-## The command should write the selected file path to the specified file.
-## The following placeholders are defined: * `{}`: Filename of the file
-## to be written to.
+## The command should write the selected file path to the specified file
+## or stdout. The following placeholders are defined: * `{}`: Filename of
+## the file to be written to. If not contained in any argument, the
+## standard output of the command is read instead.
 ## Type: ShellCommand
 # c.fileselect.single_file.command = ['xterm', '-e', 'ranger', '--choosefile={}']
 
@@ -1121,6 +1234,11 @@ c.fonts.completion.category = 'bold 12pt DejaVuSansMono Nerd Font'
 ## Font used in the completion widget.
 ## Type: Font
 c.fonts.completion.entry = '12pt DejaVuSansMono Nerd Font'
+
+## Font used for the context menu. If set to null, the Qt default is
+## used.
+## Type: Font
+# c.fonts.contextmenu = None
 
 ## Font used for the debugging console.
 ## Type: Font
@@ -1259,7 +1377,7 @@ c.fonts.tabs.unselected = '12pt DejaVuSansMono Nerd Font'
 
 ## Leave hint mode when starting a new page load.
 ## Type: Bool
-# c.hints.leave_on_load = True
+# c.hints.leave_on_load = False
 
 ## Minimum number of characters used for hint strings.
 ## Type: Int
@@ -1297,7 +1415,7 @@ c.fonts.tabs.unselected = '12pt DejaVuSansMono Nerd Font'
 ## CSS selectors used to determine which elements on a page should have
 ## hints.
 ## Type: Dict
-# c.hints.selectors = {'all': ['a', 'area', 'textarea', 'select', 'input:not([type="hidden"])', 'button', 'frame', 'iframe', 'img', 'link', 'summary', '[contenteditable]:not([contenteditable="false"])', '[onclick]', '[onmousedown]', '[role="link"]', '[role="option"]', '[role="button"]', '[ng-click]', '[ngClick]', '[data-ng-click]', '[x-ng-click]', '[tabindex]'], 'links': ['a[href]', 'area[href]', 'link[href]', '[role="link"][href]'], 'images': ['img'], 'media': ['audio', 'img', 'video'], 'url': ['[src]', '[href]'], 'inputs': ['input[type="text"]', 'input[type="date"]', 'input[type="datetime-local"]', 'input[type="email"]', 'input[type="month"]', 'input[type="number"]', 'input[type="password"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="time"]', 'input[type="url"]', 'input[type="week"]', 'input:not([type])', '[contenteditable]:not([contenteditable="false"])', 'textarea']}
+# c.hints.selectors = {'all': ['a', 'area', 'textarea', 'select', 'input:not([type="hidden"])', 'button', 'frame', 'iframe', 'img', 'link', 'summary', '[contenteditable]:not([contenteditable="false"])', '[onclick]', '[onmousedown]', '[role="link"]', '[role="option"]', '[role="button"]', '[role="tab"]', '[role="checkbox"]', '[role="menuitem"]', '[role="menuitemcheckbox"]', '[role="menuitemradio"]', '[ng-click]', '[ngClick]', '[data-ng-click]', '[x-ng-click]', '[tabindex]:not([tabindex="-1"])'], 'links': ['a[href]', 'area[href]', 'link[href]', '[role="link"][href]'], 'images': ['img'], 'media': ['audio', 'img', 'video'], 'url': ['[src]', '[href]'], 'inputs': ['input[type="text"]', 'input[type="date"]', 'input[type="datetime-local"]', 'input[type="email"]', 'input[type="month"]', 'input[type="number"]', 'input[type="password"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="time"]', 'input[type="url"]', 'input[type="week"]', 'input:not([type])', '[contenteditable]:not([contenteditable="false"])', 'textarea']}
 
 ## Make characters in hint strings uppercase.
 ## Type: Bool
@@ -1349,6 +1467,26 @@ c.input.insert_mode.leave_on_load = True
 ## Type: Bool
 # c.input.links_included_in_focus_chain = True
 
+## Interpret number prefixes as counts for bindings. This enables for vi-
+## like bindings that can be prefixed with a number to indicate a count.
+## Disabling it allows for emacs-like bindings where number keys are
+## passed through (according to `input.forward_unbound_keys`) instead.
+## Type: Bool
+# c.input.match_counts = True
+
+## Whether the underlying Chromium should handle media keys. On Linux,
+## disabling this also disables Chromium's MPRIS integration.
+## Type: Bool
+# c.input.media_keys = True
+
+## Mode to change to when focusing on a tab/URL changes.
+## Type: String
+## Valid values:
+##   - normal
+##   - insert
+##   - passthrough
+# c.input.mode_override = None
+
 ## Enable back and forward buttons on the mouse.
 ## Type: Bool
 # c.input.mouse.back_forward_buttons = True
@@ -1366,11 +1504,11 @@ c.input.insert_mode.leave_on_load = True
 # c.input.partial_timeout = 0
 
 ## Enable spatial navigation. Spatial navigation consists in the ability
-## to navigate between focusable elements in a Web page, such as
-## hyperlinks and form controls, by using Left, Right, Up and Down arrow
-## keys. For example, if the user presses the Right key, heuristics
-## determine whether there is an element he might be trying to reach
-## towards the right and which element he probably wants.
+## to navigate between focusable elements, such as hyperlinks and form
+## controls, on a web page by using the Left, Right, Up and Down arrow
+## keys. For example, if a user presses the Right key, heuristics
+## determine whether there is an element they might be trying to reach
+## towards the right and which element they probably want.
 ## Type: Bool
 # c.input.spatial_navigation = False
 
@@ -1456,6 +1594,47 @@ c.input.insert_mode.leave_on_load = True
 ## Type: List of String
 c.qt.args = ["enable-quic"]
 
+## When to use Chromium's low-end device mode. This improves the RAM
+## usage of renderer processes, at the expense of performance.
+## Type: String
+## Valid values:
+##   - always: Always use low-end device mode.
+##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
+##   - never: Never use low-end device mode.
+# c.qt.chromium.low_end_device_mode = 'auto'
+
+## Which Chromium process model to use. Alternative process models use
+## less resources, but decrease security and robustness. See the
+## following pages for more details:    -
+## https://www.chromium.org/developers/design-documents/process-models
+## - https://doc.qt.io/qt-5/qtwebengine-features.html#process-models
+## Type: String
+## Valid values:
+##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
+##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
+##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
+# c.qt.chromium.process_model = 'process-per-site-instance'
+
+## What sandboxing mechanisms in Chromium to use. Chromium has various
+## sandboxing layers, which should be enabled for normal browser usage.
+## Mainly for testing and development, it's possible to disable
+## individual sandboxing layers via this setting. Open `chrome://sandbox`
+## to see the current sandbox status. Changing this setting is only
+## recommended if you know what you're doing, as it **disables one of
+## Chromium's security layers**. To avoid sandboxing being accidentally
+## disabled persistently, this setting can only be set via `config.py`,
+## not via `:set`. See the Chromium documentation for more details: - htt
+## ps://chromium.googlesource.com/chromium/src/\+/HEAD/docs/linux/sandbox
+## ing.md[Linux] - https://chromium.googlesource.com/chromium/src/\+/HEAD
+## /docs/design/sandbox.md[Windows] - https://chromium.googlesource.com/c
+## hromium/src/\+/HEAD/docs/design/sandbox_faq.md[FAQ (Windows-centric)]
+## Type: String
+## Valid values:
+##   - enable-all: Enable all available sandboxing mechanisms.
+##   - disable-seccomp-bpf: Disable the Seccomp BPF filter sandbox (Linux only).
+##   - disable-all: Disable all sandboxing (**not recommended!**).
+# c.qt.chromium.sandboxing = 'enable-all'
+
 ## Additional environment variables to set. Setting an environment
 ## variable to null/None will unset it.
 ## Type: Dict
@@ -1493,26 +1672,14 @@ c.qt.args = ["enable-quic"]
 ## Type: Bool
 c.qt.highdpi = True
 
-## When to use Chromium's low-end device mode. This improves the RAM
-## usage of renderer processes, at the expense of performance.
-## Type: String
-## Valid values:
-##   - always: Always use low-end device mode.
-##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
-##   - never: Never use low-end device mode.
-# c.qt.low_end_device_mode = 'auto'
-
-## Which Chromium process model to use. Alternative process models use
-## less resources, but decrease security and robustness. See the
-## following pages for more details:    -
-## https://www.chromium.org/developers/design-documents/process-models
-## - https://doc.qt.io/qt-5/qtwebengine-features.html#process-models
-## Type: String
-## Valid values:
-##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
-##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
-##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
-# c.qt.process_model = 'process-per-site-instance'
+## Work around locale parsing issues in QtWebEngine 5.15.3. With some
+## locales, QtWebEngine 5.15.3 is unusable without this workaround. In
+## affected scenarios, QtWebEngine will log "Network service crashed,
+## restarting service." and only display a blank page. However, It is
+## expected that distributions shipping QtWebEngine 5.15.3 follow up with
+## a proper fix soon, so it is disabled by default.
+## Type: Bool
+# c.qt.workarounds.locale = False
 
 ## Delete the QtWebEngine Service Worker directory on every start. This
 ## workaround can help with certain crashes caused by an unknown
@@ -1635,7 +1802,7 @@ c.session.lazy_restore = True
 # c.statusbar.show = 'always'
 
 ## List of widgets displayed in the statusbar.
-## Type: List of String
+## Type: List of StatusbarWidget
 ## Valid values:
 ##   - url: Current page URL.
 ##   - scroll: Percentage of the current page position like `10%`.
@@ -1644,6 +1811,7 @@ c.session.lazy_restore = True
 ##   - tabs: Current active tab, e.g. `2`.
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
+##   - text:foo: Display the static text after the colon, `foo` in the example.
 # c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
@@ -1820,7 +1988,8 @@ c.tabs.select_on_remove = 'prev'
 ## the current web page. * `{title_sep}`: The string `" - "` if a title
 ## is set, empty otherwise. * `{index}`: Index of this tab. *
 ## `{aligned_index}`: Index of this tab padded with spaces to have the
-## same   width. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
+## same   width. * `{relative_index}`: Index of this tab relative to the
+## current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
 ## Page scroll position. * `{host}`: Host of the current web page. *
 ## `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
 ## when private mode is enabled. * `{current_url}`: URL of the current
@@ -1903,11 +2072,11 @@ c.tabs.select_on_remove = 'prev'
 ## qutebrowser`.
 ## Type: Dict
 c.url.searchengines = {
-        'DEFAULT': 'https://duckduckgo.com/?q={}&kae=t&kl=de-de&kad=de_DE&kp=-2&kav=1&t=h_&ia=web',
+        'DEFAULT': 'https://www.google.de/search?q={}',
         # 'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}&t=dark&prfe=67d6f7efcd45238dc5da976ba89cf2c159fcc4f8848a538a69f41f78436014c15065027ac0acf3048b0efafd7d93a95c',
         's': 'https://search.snopyta.org/?preferences=eJxlVMFu2zAM_Zr5YmRY18NOPgwbhhUY0GLNdhUYibY5S6JByUm8rx-dxInSHeJYEvn4-PxECxk7FsLUdBhRwL_7-IUCdJgqD7Gb9K1xWHm24E9vMGW2HEaPGZvqFGpG4ePcbGXCKmDu2TUvz6_bKkGLCUFs33yoco8BG04WpBJMk8_JcDQRDybDrvkGPmHlmIwest-jNAy6fM_SVaesTcqzUvDckWWH-40DGSpHCXYencHYUdQ2Mg8zZ049DxCN2ZNDTtpUwr8RgjG3NneUd5MdMBtDWdcdc-exHj3MdeC9alKkB_6DOJTpA9kBksa05HEJ4RGj4MjF1h3klMgac_rToziGS90ZosNjCQ22SzwV1VtBrBO3-QCCtSNBm1nmC8AavkK_kWDdhnGoA4mwXPIEnaOl-9P3Ljb0oyzLHnYCy-MSH2eAW2-tEyZXrIXiQGALPGvtJu-LPjwposz10mqiVPaMeQ4cvX7DcpciFOlXyW_CgDBfCZ_NtrijXh4X2nsG7SmxJfB1QEdQaHblmjJIHhc3F-XPHV9j1qS15SufVeJWIMDS5Fo7zAGDfqk6C8Tk9ba5Er9TT2UKi9MKhVe0s3v-53PtHoUPdAfoJoex3LgIVHhLFaI91vfql0aFcSwsPEN_D7Ca5I2gD8dCqI46vZWQcpn48Pj46Viwd3r5ll_H9TmxAJhiUi6pL7beuPrEr8J4f_s7yh52b_x9oXCbFaOfNDw1T7GlSBlNssJ-4fisd9icx5NRLw7XGbVTqRPKMqsWMr8pbDwNaHrOA843Iiv0VkBHi5hfP38ono4TlBX-s7Wopvn6_KQnB9H6evJ6su5SzZ5H8mwSer3mpzPfGuXKEiATx4XA9-325XXNr1Qb1KL_ANY2L34=&q="{}"',
         'si': 'https://search.snopyta.org/?preferences=eJxlVMGO0zAQ_RpyiYpYOHDKAYEQSEi7YgtXa2pPkyG2Jxo77YavZ9w2rbscmib2zJs3z89jIWPPQpi6HiMK-DfvP1NuPMR-hh47h41nC_70BnNmy2HymLFrKGiAmYRflm4rMzYB88Cue3p83jYJ9pgQxA7duyYPGLDjZEEawTT7nAxHE_FoMuy6r-ATNo7J6Cb7A0qXLG2Gefc2H5tT2iblRTl47smyw8PGgYyNowQ7j85g7ClqD5nHhTOngUeIxhzIISftKOHfCMGYW487yrvZjpiNoazfPXPvsZ08LG3ggwpSpQf-gzjW6SPZEZLG7MljCeEJo-DE1dId5JzIGnP60604hUvdBaLDlxoabJ94rqrvBbFNvM9HEGwdCdrMslwA1vAV-pUE6zJMYxtIhOWSJ-gcle7LKaZqQU-lfA6wEyiPS3xcAG697Z0wuepbKI4EtsKz1m7yoerDkyLK0pZWE6W6Z8xL4Oj1DOtVilClXyW_CQPCfCV8dltxR1seF9oHBu0psSXwbUBHUGl25ZoySJ6Knavy546vMWvS2vKVzyrxXiBAaXKtHZaAQU-qzQIxeb1qrsbv1VOZQnFapfCKdnbP_3yu3aPwke4A3eww1gsXgSpvqUJ0wPZe_dqoME2VhRcY7gFWk7wS9OGlEqqnXm8lpFwnPnz48PGlYu_08pVfz-05sQKYY1IuaaiWXrn6xK_BeH_7e8oedq_8faFwmxWTnzU8dd_jniJlNMkK-8LxUe-wOc8no14cr0Nqp1InlDKsCpnfFDaeRjQD5xGXG5EVeiugo0XMr58_FE_HCcoK_8laVNN8efyuO0fR-rrzfLJuqWbP83gxCb1e89Oe3xvlyhIgE8dC4Nt2-_S85jeqDWrRfyU9Lic=&q="{}"',
-        'g': 'https://www.google.de/search?q={}',
+        'dd': 'https://duckduckgo.com/?q={}&kae=t&kl=de-de&kad=de_DE&kp=-2&kav=1&t=h_&ia=web',
         'y': 'https://www.youtube.de/results?search_query={}',
         'gh': 'https://github.com/search?q={}',
         'a': 'https://www.amazon.de/s?k={}',
@@ -2056,7 +2225,7 @@ config.bind('P', 'spawn --userscript qute-pass --mode gopass')
 # config.bind('Sh', 'history')
 # config.bind('Sq', 'bookmark-list')
 # config.bind('Ss', 'set')
-# config.bind('T', 'tab-focus')
+# config.bind('T', 'set-cmd-text -sr :tab-focus')
 # config.bind('U', 'undo -w')
 # config.bind('V', 'mode-enter caret ;; selection-toggle --line')
 # config.bind('ZQ', 'quit')
@@ -2215,9 +2384,10 @@ config.bind('P', 'spawn --userscript qute-pass --mode gopass')
 # config.bind('<Ctrl-Return>', 'command-accept --rapid', mode='command')
 # config.bind('<Ctrl-Shift-C>', 'completion-item-yank --sel', mode='command')
 # config.bind('<Ctrl-Shift-Tab>', 'completion-item-focus prev-category', mode='command')
+# config.bind('<Ctrl-Shift-W>', 'rl-filename-rubout', mode='command')
 # config.bind('<Ctrl-Tab>', 'completion-item-focus next-category', mode='command')
 # config.bind('<Ctrl-U>', 'rl-unix-line-discard', mode='command')
-# config.bind('<Ctrl-W>', 'rl-unix-word-rubout', mode='command')
+# config.bind('<Ctrl-W>', 'rl-rubout " "', mode='command')
 # config.bind('<Ctrl-Y>', 'rl-yank', mode='command')
 # config.bind('<Down>', 'completion-item-focus --history next', mode='command')
 # config.bind('<Escape>', 'mode-leave', mode='command')
@@ -2239,6 +2409,7 @@ config.bind('P', 'spawn --userscript qute-pass --mode gopass')
 ## Bindings for insert mode
 # config.bind('<Ctrl-E>', 'edit-text', mode='insert')
 # config.bind('<Escape>', 'mode-leave', mode='insert')
+# config.bind('<Shift-Escape>', 'fake-key <Escape>', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
 
 ## Bindings for passthrough mode
@@ -2259,8 +2430,9 @@ config.bind('P', 'spawn --userscript qute-pass --mode gopass')
 # config.bind('<Ctrl-H>', 'rl-backward-delete-char', mode='prompt')
 # config.bind('<Ctrl-K>', 'rl-kill-line', mode='prompt')
 # config.bind('<Ctrl-P>', 'prompt-open-download --pdfjs', mode='prompt')
+# config.bind('<Ctrl-Shift-W>', 'rl-filename-rubout', mode='prompt')
 # config.bind('<Ctrl-U>', 'rl-unix-line-discard', mode='prompt')
-# config.bind('<Ctrl-W>', 'rl-unix-word-rubout', mode='prompt')
+# config.bind('<Ctrl-W>', 'rl-rubout " "', mode='prompt')
 # config.bind('<Ctrl-X>', 'prompt-open-download', mode='prompt')
 # config.bind('<Ctrl-Y>', 'rl-yank', mode='prompt')
 # config.bind('<Down>', 'prompt-item-focus next', mode='prompt')
