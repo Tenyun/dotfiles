@@ -1,6 +1,6 @@
 ip () {
   case $* in
-    a* ) shift 1; command ip -br -c a "$@" | more ;;
+    a ) shift 1; command ip -br -c a "$@" ;;
     * ) command ip "$@" ;;
   esac
 }
